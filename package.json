@@ -1,0 +1,10 @@
+{
+  "name": "quadra",
+  "version": "1.0.0",
+  "description": "Project based on Quadra car by game Cyber Punk 2077",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "jefersonsilva01",
+  "license": "ISC"
+}
