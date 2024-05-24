@@ -2,6 +2,9 @@
   "name": "quadra",
   "version": "1.0.0",
   "description": "Project based on Quadra car by game Cyber Punk 2077",
+  "main": "server.js",
+  "author": "jefersonsilva01",
+  "license": "MIT",
   "scripts": {
     "start": "node server.js",
     "dev": "nodemon server.js"
@@ -23,12 +26,10 @@
     "nodemailer": "6.9.13",
     "passport": "0.7.0",
     "passport-facebook": "3.0.0",
-    "passport-google-oauth": "2.0.0"
-
+    "passport-google-oauth": "2.0.0",
+    "serve-favicon": "^2.5.0"
   },
   "devDependencies": {
     "nodemon": "3.1.0"
-  },
-  "author": "jefersonsilva01",
-  "license": "ISC"
+  }
 }
