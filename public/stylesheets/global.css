@@ -11,3 +11,7 @@
   --main-white: #fff;
   --main-white-two-percent: #fff2;
 }
+
+body {
+  background-color: var(--dark-chalks);
+}

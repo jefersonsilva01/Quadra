@@ -1,3 +1,8 @@
+nav {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
 .nav-title {
   font-family: "Odibee Sans", sans-serif;
   font-weight: 400;
@@ -20,11 +25,13 @@
 
 header {
   height: 100vh;
-  width: 100vw;
+  max-width: 1440px;
+  margin: 0 auto;
   background-image: url("../images/quadra-27.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  padding-left: 80px;
 }
 
 header::before {
@@ -57,19 +64,16 @@ header a {
 header h1 {
   font-size: 15em;
   top: 120;
-  left: 80;
 }
 
 header h3 {
   font-size: 3em;
   top: 380;
-  left: 80;
 }
 
 header a {
   font-size: 1.5em;
   top: 460;
-  left: 80;
   text-decoration: none;
   border: 2px solid var(--main-white);
   padding: 8px 16px;
