@@ -41,6 +41,8 @@ header {
 }
 
 header::before {
+  max-width: 1440px;
+  margin: 0 auto;
   content: "";
   position: absolute;
   top: 0;
@@ -50,10 +52,10 @@ header::before {
   background: rgb(33, 33, 34);
   background: linear-gradient(
     5deg,
-    rgba(33, 33, 34, 1) 30%,
-    rgba(33, 33, 34, 0) 65%
+    rgba(24, 24, 26, 1) 20%,
+    rgba(24, 24, 26, 0) 45%
   );
-  opacity: 0.9;
+  opacity: 1;
 }
 
 header h1,
@@ -131,6 +133,103 @@ header a:hover {
   font-style: normal;
   text-align: center;
   opacity: 0.5;
+}
+
+#overview {
+  padding-top: 48px;
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  color: var(--main-white);
+}
+
+#overview-1,
+#overview-2 {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 32px 0;
+}
+
+#overview-1 p {
+  width: 520px;
+}
+
+#overview-2 p {
+  width: 448px;
+}
+
+#overview-1 .image-container {
+  width: 448px;
+  height: 568px;
+}
+
+#overview-2 .image-container {
+  width: 552px;
+  height: 400px;
+}
+
+#overview-2 a {
+  text-decoration: none;
+  color: var(--main-white);
+  font-family: "Anek Odia", sans-serif;
+  font-size: 1.3em;
+  font-weight: 400;
+  font-style: normal;
+  position: relative;
+  left: 320px;
+  top: 30px;
+  transition: opacity 0.2s ease-in-out;
+}
+
+#overview-2 a:hover {
+  opacity: 0.5;
+}
+
+#overview h5 {
+  font-family: "Odibee Sans", sans-serif;
+  font-weight: 400;
+  font-size: 1.8em;
+  font-style: normal;
+  letter-spacing: 5;
+  margin-bottom: 16px;
+}
+
+#overview p {
+  font-family: "Anek Odia", sans-serif;
+  font-size: 1.5em;
+  font-weight: 400;
+  font-style: normal;
+  text-align: left;
+}
+
+.image-container {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden; /* Para garantir que o ::after não saia dos limites */
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+}
+
+.image-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(33, 33, 34);
+  background: linear-gradient(
+    5deg,
+    rgba(33, 33, 34, 1) 30%,
+    rgba(33, 33, 34, 0) 65%
+  );
+  opacity: 0.9;
+  pointer-events: none; /* Para garantir que o ::after não bloqueie a imagem */
 }
 
 /* `sm` applies to x-small devices (portrait phones, less than 576px) */
