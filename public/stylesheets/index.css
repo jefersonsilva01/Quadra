@@ -1,6 +1,7 @@
 nav {
   max-width: 1440px;
   margin: 0 auto;
+  background-color: var(--dark-chalks);
 }
 
 .nav-title {
@@ -17,6 +18,11 @@ nav {
   font-weight: 400;
   font-style: normal;
   font-variation-settings: "wdth" 100;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.nav-link:hover {
+  opacity: 0.5;
 }
 
 .nav-signup {
@@ -43,11 +49,11 @@ header::before {
   bottom: 0;
   background: rgb(33, 33, 34);
   background: linear-gradient(
-    30deg,
-    rgba(33, 33, 34, 1) 38%,
-    rgba(33, 33, 34, 0) 70%
+    5deg,
+    rgba(33, 33, 34, 1) 30%,
+    rgba(33, 33, 34, 0) 65%
   );
-  opacity: 0.6;
+  opacity: 0.9;
 }
 
 header h1,
@@ -63,6 +69,7 @@ header a {
 
 header h1 {
   font-size: 15em;
+  width: fit-content;
   top: 120;
 }
 
@@ -88,6 +95,42 @@ header a:hover {
   border: 2px solid var(--dark-chalks);
   color: var(--dark-chalks);
   background-color: var(--main-white);
+}
+
+#car-info {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  color: var(--main-white);
+  padding: 8px;
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  right: 0;
+}
+
+#car-info ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+#car-info h3 {
+  font-family: "Odibee Sans", sans-serif;
+  font-weight: 400;
+  font-size: 2em;
+  font-style: normal;
+  letter-spacing: 5;
+}
+
+#car-info span {
+  font-family: "Anek Odia", sans-serif;
+  font-size: 1.3em;
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+  opacity: 0.5;
 }
 
 /* `sm` applies to x-small devices (portrait phones, less than 576px) */
