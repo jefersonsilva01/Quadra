@@ -53,7 +53,7 @@ header::before {
   background: linear-gradient(
     5deg,
     rgba(24, 24, 26, 1) 20%,
-    rgba(24, 24, 26, 0) 45%
+    rgba(24, 24, 26, 0) 85%
   );
   opacity: 1;
 }
@@ -225,11 +225,59 @@ header a:hover {
   background: rgb(33, 33, 34);
   background: linear-gradient(
     5deg,
-    rgba(33, 33, 34, 1) 30%,
-    rgba(33, 33, 34, 0) 65%
+    rgba(33, 33, 34, 1) 20%,
+    rgba(33, 33, 34, 0) 85%
   );
   opacity: 0.9;
   pointer-events: none; /* Para garantir que o ::after não bloqueie a imagem */
+}
+
+#gallery {
+  max-width: 1440px;
+  margin: 0 auto;
+  margin-top: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#image-container-16 img {
+  width: 1216px;
+  height: 408px;
+  margin: 0 auto;
+}
+
+#gallery-images {
+  width: 1216px;
+  margin-top: 48px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+}
+
+#image-container-28 img {
+  width: 696px;
+  height: 392px;
+  margin: 0 auto;
+}
+
+#image-container-01 img {
+  width: 488px;
+  height: 392px;
+  margin: 0 auto;
+}
+
+#image-container-01 img,
+#image-container-16 img,
+#image-container-28 img {
+  transition: scale 0.2s ease-in-out;
+}
+
+#image-container-01 img:hover,
+#image-container-16 img:hover,
+#image-container-28 img:hover {
+  scale: 1.1;
+  cursor: pointer;
 }
 
 /* `sm` applies to x-small devices (portrait phones, less than 576px) */
