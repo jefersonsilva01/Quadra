@@ -280,6 +280,34 @@ header a:hover {
   cursor: pointer;
 }
 
+#specifications {
+  max-width: 1440px;
+  margin: 120px auto 0;
+  padding: 53px 112px 98px;
+  background-color: var(--main-white);
+}
+
+#specifications h3 {
+  font-family: "Odibee Sans", sans-serif;
+  font-weight: 400;
+  font-size: 1.8em;
+  font-style: normal;
+  letter-spacing: 5;
+  margin-bottom: 16px;
+}
+
+#specifications p {
+  font-family: "Anek Odia", sans-serif;
+  font-size: 1.2em;
+  font-weight: 400;
+  font-style: normal;
+  text-align: left;
+}
+
+#specifications img {
+  height: 405px;
+}
+
 /* `sm` applies to x-small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
   header h1 {
