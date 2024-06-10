@@ -308,6 +308,121 @@ header a:hover {
   height: 405px;
 }
 
+footer {
+  max-width: 1440px;
+  margin: 0 auto;
+  color: var(--main-white);
+  padding: 24px 112px;
+}
+
+#contact ul {
+  list-style: none;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+
+#contact {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#contact h4 {
+  font-family: "Odibee Sans", sans-serif;
+  font-weight: 400;
+  font-size: 1.8em;
+  font-style: normal;
+  letter-spacing: 5;
+  margin-bottom: 16px;
+}
+
+#contact h5 {
+  font-family: "Anek Odia", sans-serif;
+  font-size: 1.2em;
+  font-weight: 600;
+  font-style: normal;
+}
+
+#contact span {
+  font-family: "Anek Odia", sans-serif;
+  font-size: 1.2em;
+  font-weight: 400;
+  font-style: normal;
+}
+
+form label {
+  display: block;
+  font-family: "Anek Odia", sans-serif;
+  font-size: 1.1em;
+  font-weight: 400;
+  font-style: normal;
+  padding-bottom: 8px;
+}
+
+form input {
+  width: 303px;
+  height: 40px;
+  padding: 8px 16px;
+  border-radius: 4px;
+  border-color: var(--main-white);
+}
+
+form button {
+  display: block;
+  font-family: "Anek Odia", sans-serif;
+  font-size: 1.2em;
+  font-weight: 400;
+  font-style: normal;
+  border-radius: 4px;
+  height: 40px;
+  padding: 8px 16px;
+  border: 1.5px solid var(--main-white);
+  background-color: var(--dark-chalks);
+  color: var(--main-white);
+  display: inline;
+  margin-left: 16px;
+  transition: all 0.2s ease-in-out;
+}
+
+form button:hover {
+  border: 1.5px solid var(--main-white);
+  background-color: var(--main-white);
+  color: var(--dark-chalks);
+}
+
+#footer-links {
+  border-top: 1.5px solid var(--main-white);
+  margin-top: 16px;
+  padding: 16px 0;
+  display: flex;
+  justify-content: space-between;
+  color: var(--main-white);
+}
+
+#footer-links ul {
+  list-style: none;
+  padding: 0px;
+  display: flex;
+  justify-content: space-between;
+  width: 350px;
+}
+
+#footer-links li {
+  font-family: "Anek Odia", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  font-style: normal;
+}
+
+#footer-links a {
+  text-decoration: none;
+  color: var(--main-white);
+  font-family: "Anek Odia", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  font-style: normal;
+}
+
 /* `sm` applies to x-small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
   header h1 {
