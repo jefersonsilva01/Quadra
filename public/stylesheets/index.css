@@ -136,12 +136,14 @@ header a:hover {
 }
 
 #overview {
-  padding-top: 48px;
+  padding-top: 200px;
   max-width: 1440px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   color: var(--main-white);
+  opacity: 0;
+  transition: all 1.8s ease-in-out;
 }
 
 #overview-1,
@@ -234,11 +236,13 @@ header a:hover {
 
 #gallery {
   max-width: 1440px;
-  margin: 0 auto;
-  margin-top: 200px;
+  margin: 0 auto 120px;
+  padding-top: 400px;
+  opacity: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: all 1.8s ease-in-out;
 }
 
 #image-container-16 img {
@@ -282,9 +286,11 @@ header a:hover {
 
 #specifications {
   max-width: 1440px;
-  margin: 120px auto 0;
-  padding: 53px 112px 98px;
+  margin: 0 auto 0;
+  padding: 120px 112px 36px;
   background-color: var(--main-white);
+  opacity: 0;
+  transition: all 1.8s ease-in-out;
 }
 
 #specifications h3 {
@@ -312,7 +318,7 @@ footer {
   max-width: 1440px;
   margin: 0 auto;
   color: var(--main-white);
-  padding: 24px 112px;
+  padding: 24px 112px 4px;
 }
 
 #contact ul {
@@ -364,7 +370,7 @@ form input {
   height: 40px;
   padding: 8px 16px;
   border-radius: 4px;
-  border-color: var(--main-white);
+  border: 1.5px solid var(--main-white);
 }
 
 form button {
@@ -393,7 +399,7 @@ form button:hover {
 #footer-links {
   border-top: 1.5px solid var(--main-white);
   margin-top: 16px;
-  padding: 16px 0;
+  padding: 16px 0 0;
   display: flex;
   justify-content: space-between;
   color: var(--main-white);
@@ -402,6 +408,7 @@ form button:hover {
 #footer-links ul {
   list-style: none;
   padding: 0px;
+  margin: 0;
   display: flex;
   justify-content: space-between;
   width: 350px;

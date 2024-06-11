@@ -12,6 +12,10 @@
   --main-white-two-percent: #fff2;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: var(--dark-chalks);
   max-width: 1440px;
