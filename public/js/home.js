@@ -54,3 +54,25 @@ const showSpecifications = () => {
 window.addEventListener("scroll", showSpecifications);
 
 // ================================================
+
+// Nav color function
+
+const navBar = document.querySelector('.navbar')
+const navTitle = document.querySelector('.nav-title')
+const navLink = document.querySelectorAll('.nav-link')
+
+const navColorChange = () => {
+  if (window.scrollY >= 120) {
+    navBar.classList.add('nav-scroll')
+    navTitle.classList.add('nav-title-scroll')
+    navLink.forEach(element => element.classList.add('nav-link-scroll'));
+  } else {
+    navBar.classList.remove('nav-scroll')
+    navTitle.classList.remove('nav-title-scroll')
+    navLink.forEach(element => element.classList.remove('nav-link-scroll'));
+  }
+}
+
+window.addEventListener("scroll", navColorChange);
+
+// ================================================
