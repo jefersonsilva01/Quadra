@@ -15,7 +15,7 @@
   <body>
     <nav class="navbar fixed-top navbar-expand-lg">
       <div class="container-fluid">
-        <a class="navbar-brand nav-title" href="#">QUADRA</a>
+        <a class="navbar-brand nav-title">QUADRA</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -159,19 +159,22 @@
     </section>
 
     <section id="specifications">
-      <h3>SPECIFICATIONS</h3>
+      <div id="info">
+        <h3>SPECIFICATIONS</h3>
 
-      <p>
-        The vehicle is powered by CHOOH2, a standard synthetic alcohol fuel.
-        <br /><br />
-        The V-Tech is rear-wheel drive, with the rear tires larger and wider
-        than its front ones. Additionally, the car's exhaust manifold and air
-        intake are visible on the rear, and its mid-mounted engine can be seen
-        by opening the hood. The vehicle's storage compartment is in the front.
-      </p>
+        <p>
+          The vehicle is powered by CHOOH2, a standard synthetic alcohol fuel.
+          <br /><br />
+          The V-Tech is rear-wheel drive, with the rear tires larger and wider
+          than its front ones. Additionally, the car's exhaust manifold and air
+          intake are visible on the rear, and its mid-mounted engine can be seen
+          by opening the hood. The vehicle's storage compartment is in the
+          front.
+        </p>
 
-      <div id="image-container-23" class="image-container">
-        <img src="../images/quadra-23.png" alt="car side" />
+        <div id="image-container-23" class="image-container">
+          <img src="../images/quadra-23.png" alt="car side" />
+        </div>
       </div>
     </section>
 
@@ -231,6 +234,99 @@
           />
         </svg>
       </a>
+    </div>
+
+    <div id="modal-slider">
+      <div id="content">
+        <div id="icon">
+          <svg
+            id="btn-close"
+            xmlns="http://www.w3.org/2000/svg"
+            width="28"
+            height="28"
+            fill="rgb(24, 24, 26)"
+            class="bi bi-x-circle-fill"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z"
+            />
+          </svg>
+        </div>
+        <div id="btns-slide">
+          <svg
+            class="btn-left"
+            xmlns="http://www.w3.org/2000/svg"
+            width="28"
+            height="28"
+            fill="currentColor"
+            class="bi bi-arrow-left-circle-fill"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"
+            />
+          </svg>
+          <svg
+            class="btn-right"
+            xmlns="http://www.w3.org/2000/svg"
+            width="28"
+            height="28"
+            fill="currentColor"
+            class="bi bi-arrow-right-circle-fill"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z"
+            />
+          </svg>
+        </div>
+        <div
+          class="image-slider active"
+          style="
+          background-image: url('../images/quadra-11.png'); background-position: center; background-repeat: no-repeat; background-size: contain;"
+        ></div>
+        <div
+          class="image-slider"
+          style="
+          background-image: url('../images/quadra-15.png'); background-position: center; background-repeat: no-repeat; background-size: contain;"
+        ></div>
+        <div
+          class="image-slider"
+          style="
+          background-image: url('../images/quadra-22.png'); background-position: center; background-repeat: no-repeat; background-size: contain;"
+        ></div>
+        <div
+          class="image-slider"
+          style="
+          background-image: url('../images/quadra-23.png'); background-position: center; background-repeat: no-repeat; background-size: contain;"
+        ></div>
+        <div
+          class="image-slider"
+          style="
+          background-image: url('../images/quadra-27.png'); background-position: center; background-repeat: no-repeat; background-size: contain;"
+        ></div>
+        <div
+          class="image-slider"
+          style="
+          background-image: url('../images/quadra-09.png'); background-position: center; background-repeat: no-repeat; background-size: contain;"
+        ></div>
+        <div
+          class="image-slider"
+          style="
+          background-image: url('../images/quadra-28.png'); background-position: center; background-repeat: no-repeat; background-size: contain;"
+        ></div>
+        <div
+          class="image-slider"
+          style="
+          background-image: url('../images/quadra-08.png'); background-position: center; background-repeat: no-repeat; background-size: contain;"
+        ></div>
+        <div
+          class="image-slider"
+          style="
+          background-image: url('../images/quadra-21.png'); background-position: center; background-repeat: no-repeat; background-size: contain;"
+        ></div>
+      </div>
     </div>
 
     <script src="../js/home.js">

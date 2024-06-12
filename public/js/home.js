@@ -3,8 +3,8 @@
 const buttonTop = document.getElementById('top-buttom');
 
 const scrollToTop = () => window.scrollY >= 480
-  ? buttonTop.style.display = 'inline'
-  : buttonTop.style.display = 'none'
+  ? buttonTop.style.opacity = 1
+  : buttonTop.style.opacity = 0
 
 window.addEventListener("scroll", scrollToTop);
 
@@ -74,5 +74,75 @@ const navColorChange = () => {
 }
 
 window.addEventListener("scroll", navColorChange);
+
+// ================================================
+
+
+// Modal slider function
+
+const btnLeft = document.querySelector(".btn-left");
+const btnRight = document.querySelector(".btn-right");
+
+const imagesSlide = [...document.querySelectorAll('.image-slider')]
+const slideSize = imagesSlide.length;
+let index;
+
+const getElementActive = () => {
+  imagesSlide.forEach(element => {
+    if (element.classList.contains("active")) index = imagesSlide.indexOf(element);
+  });
+}
+
+btnLeft.onclick = () => {
+  getElementActive();
+
+  if (index === 0) {
+    imagesSlide[index].classList.toggle("active");
+    imagesSlide[slideSize - 1].classList.toggle("active");
+
+  } else {
+    imagesSlide[index].classList.toggle("active");
+    imagesSlide[index - 1].classList.toggle("active");
+  }
+}
+
+btnRight.onclick = () => {
+  getElementActive();
+
+  if (index === slideSize - 1) {
+    imagesSlide[index].classList.toggle("active");
+    imagesSlide[0].classList.toggle("active");
+  } else {
+    imagesSlide[index].classList.toggle("active");
+    imagesSlide[index + 1].classList.toggle("active");
+  }
+}
+
+// ================================================
+
+// Show gallery function 
+
+const modalSlide = document.querySelector("#modal-slider");
+const content = document.querySelector("#content");
+
+const imageContainer = document.querySelectorAll(".image-container");
+
+imageContainer.forEach(element => {
+  element.onclick = () => {
+    modalSlide.style.visibility = 'visible';
+    content.style.height = '80%'
+    content.style.opacity = 1;
+  }
+})
+
+// Modal close function
+
+const btnClose = document.querySelector("#btn-close");
+
+btnClose.onclick = () => {
+  modalSlide.style.visibility = 'hidden';
+  content.style.height = '0%'
+  content.style.opacity = 0;
+}
 
 // ================================================
