@@ -42,7 +42,7 @@ router.post("/subscribe", (req, res) => {
         html: subscribeTemplate.template(message)
       })
         .then(info => {
-          res.redirect("/")
+          res.render("index", { subscribe: true });
         })
         .catch(error => console.log(error));
     })

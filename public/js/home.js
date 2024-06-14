@@ -145,4 +145,15 @@ btnClose.onclick = () => {
   content.style.opacity = 0;
 }
 
+const modalSlideSubscription = document.querySelector("#modal-subscribe");
+const contentSubscription = document.querySelector("#modal-content");
+
+const btnCloseSubscription = document.querySelector("#btn-close-subscription");
+
+btnCloseSubscription.onclick = () => {
+  modalSlideSubscription.style.visibility = 'hidden';
+  contentSubscription.style.height = '0%'
+  contentSubscription.style.opacity = 0;
+}
+
 // ================================================

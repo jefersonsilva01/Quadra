@@ -515,6 +515,7 @@ form button:hover {
 
 #icon {
   padding: 8px;
+  overflow: hidden;
 }
 
 #icon svg {
@@ -562,6 +563,38 @@ form button:hover {
   opacity: 1;
   visibility: visible;
   display: block;
+}
+
+#modal-subscribe {
+  position: fixed;
+  top: 0%;
+  bottom: 0%;
+  max-width: 1790px;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  background-color: var(--dark-chalks);
+  padding: 250px 0 0;
+  visibility: visible;
+}
+
+#modal-content {
+  background-color: var(--main-white);
+  width: 800px;
+  height: 40%;
+  margin: 0 auto;
+  border-radius: 4px;
+  opacity: 1;
+  transition: all 0.5s ease-in-out;
+}
+
+#modal-content p {
+  font-family: "Anek Odia", sans-serif;
+  font-size: 3rem;
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+  margin-top: 50px;
 }
 
 /* `sm` applies to x-small devices (portrait phones, less than 576px) */
