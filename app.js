@@ -15,6 +15,9 @@ app.use('/', (req, res, next) => {
 const index = require("./routes");
 app.use("/", index);
 
+const auth = require("./routes/auth/auth");
+app.use("/auth", auth);
+
 require('./error-handling')(app);
 
 module.exports = app;

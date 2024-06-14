@@ -53,7 +53,7 @@
           </div>
           <div class="navbar-nav nav-signup">
             <li class="nav-item">
-              <a class="nav-link" href="/login">LOGIN</a>
+              <a class="nav-link" href="/auth/login">LOGIN</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/signup">SIGNUP</a>
@@ -347,14 +347,10 @@
               />
             </svg>
           </div>
-          <p>You subscribe successeful</p>
+          <p>{{subscribe}}</p>
         </div>
       </div>
     {{/if}}
-
-    {{!-- {{#if errorMessage}}
-      <p class="error">{{errorMessage}}</p>
-    {{/if}} --}}
 
     <script src="../js/home.js">
 

@@ -14,10 +14,8 @@ router.get("/", (req, res) => {
 router.post("/subscribe", (req, res) => {
   const { subscribe } = req.body;
 
-  if (subscribe === "") {
-    res.status(400).res.render("index", {
-      errorMessage: "E-mail field are required.",
-    });
+  if (subscribe === '') {
+    res.status(400).render("index", { subscribe: "E-mail field are required." });
     return;
   }
 
@@ -42,16 +40,18 @@ router.post("/subscribe", (req, res) => {
         html: subscribeTemplate.template(message)
       })
         .then(info => {
-          res.render("index", { subscribe: true });
+          res.render("index", { subscribe: "You subscribe successeful" });
         })
         .catch(error => console.log(error));
     })
     .catch(error => {
       if (error instanceof mongoose.Error.ValidationError) {
-        res.status(500).render("index", { errorMessage: error.message });
+        console.log('passei');
+        res.status(500).render("index", { subscribe: error.message });
       } else if (error.code = 11000) {
+        console.log('passei 2');
         res.status(500).render("index", {
-          errorMessage: "E-mail need to be unique. Provide a valid email.",
+          subscribe: "E-mail need to be unique. Provide a valid email.",
         });
       } else {
         console.log(error);
