@@ -5,6 +5,10 @@ nav {
   transition: background-color 0.2s ease-in-out;
 }
 
+.nav-item {
+  margin: 10px 0;
+}
+
 .nav-title {
   font-family: "Odibee Sans", sans-serif;
   font-weight: 400;
@@ -14,10 +18,7 @@ nav {
   color: var(--main-white);
   transition: color 0.2s ease-in-out;
   padding: 0;
-}
-
-.nav-title:hover {
-  color: var(--main-white);
+  text-decoration: none;
 }
 
 .nav-link {
@@ -29,6 +30,7 @@ nav {
   color: var(--main-white);
   padding: 0;
   transition: color 0.2s ease-in-out;
+  line-height: 100%;
 }
 
 .nav-link:hover {
@@ -38,11 +40,8 @@ nav {
 .nav-scroll {
   background-color: var(--main-white);
 }
-.nav-title-scroll {
-  color: var(--dark-chalks);
-}
 
-.nav-title-scroll:hover {
+.nav-title-scroll {
   color: var(--dark-chalks);
 }
 
@@ -598,24 +597,35 @@ form button:hover {
 }
 
 /* `sm` applies to x-small devices (portrait phones, less than 576px) */
-@media (max-width: 575.98px) {
+@media (max-width: 926px) {
+  header {
+    padding-left: 30px;
+  }
+
   header h1 {
-    font-size: 7em;
-    top: 200;
+    font-size: 15vh;
+    top: 20%;
   }
 
   header h3 {
-    font-size: 2em;
+    font-size: 5vh;
+    top: 40%;
+  }
+
+  header a {
+    font-size: 5vh;
+    top: 50%;
+    padding: 8px 16px;
   }
 }
 
 /* `lg` applies to medium devices (tablets, less than 992px) */
-@media (min-width: 576px) and (max-width: 991.98px) {
+/* @media (min-width: 576px) and (max-width: 991.98px) {
   header h1 {
     font-size: 10em;
     top: 140;
   }
-}
+} */
 
 /* `xl` applies to large devices (desktops, less than 1200px)
 @media (max-width: 1199.98px) {
