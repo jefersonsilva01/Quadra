@@ -1,9 +1,10 @@
 require("dotenv/config")
 
 // Mongo connection development
-/* const mongoose = require("mongoose");
+const mongoose = require("mongoose");
 
-const MONGO_URI = process.env.MONGO_URI || "mongodb://localhost:27017/quadra";
+// const MONGO_URI = process.env.MONGO_URI || "mongodb://localhost:27017/quadra";
+const MONGO_URI = process.env.MONGO_URI_DEPLOY;
 
 mongoose.connect(MONGO_URI)
   .then(x => {
@@ -12,10 +13,10 @@ mongoose.connect(MONGO_URI)
   })
   .catch(err => {
     console.log("Error connecting to mongo: ", err);
-  }); */
+  });
 
 //Mongo connection production
-const { MongoClient, ServerApiVersion } = require('mongodb');
+/* const { MongoClient, ServerApiVersion } = require('mongodb');
 
 const MONGO_URI = process.env.MONGO_URI_DEPLOY;
 
@@ -38,4 +39,4 @@ async function run() {
     await client.close();
   }
 }
-run().catch(console.dir);
+run().catch(console.dir); */
