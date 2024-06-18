@@ -26,7 +26,7 @@ router.post("/subscribe", (req, res) => {
         host: 'smtp.gmail.com',
         auth: {
           user: process.env.EMAIL,
-          pass: process.env.PASSWORD,
+          pass: process.env.EMAIL_PASSWORD,
         }
       });
 
