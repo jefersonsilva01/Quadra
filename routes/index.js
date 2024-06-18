@@ -1,4 +1,4 @@
-require("dotenv");
+require("dotenv/config");
 
 const express = require("express");
 const router = express.Router();
@@ -46,12 +46,10 @@ router.post("/subscribe", (req, res) => {
     })
     .catch(error => {
       if (error instanceof mongoose.Error.ValidationError) {
-        console.log('passei');
         res.status(500).render("index", { subscribe: error.message });
       } else if (error.code = 11000) {
-        console.log('passei 2');
         res.status(500).render("index", {
-          subscribe: "E-mail need to be unique. Provide a valid email.",
+          subscribe: `E-mail need to be unique. Provide a valid email.`,
         });
       } else {
         console.log(error);
