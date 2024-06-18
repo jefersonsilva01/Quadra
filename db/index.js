@@ -1,6 +1,10 @@
 const mongoose = require("mongoose");
 
-const MONGO_URI = process.env.MONGO_URI || "mongodb://localhost:27017/quadra";
+// Mongo connection development
+// const MONGO_URI = process.env.MONGO_URI || "mongodb://localhost:27017/quadra";
+
+//Mongo connection production
+const MONGO_URI = process.env.MONGO_URI_DEPLOY;
 
 mongoose.connect(MONGO_URI)
   .then(x => {
