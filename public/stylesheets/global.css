@@ -19,6 +19,8 @@ html {
 body {
   background-color: var(--dark-chalks);
   max-width: 1790px;
+  min-width: 320px;
   width: 100%;
   margin: 0 auto;
+  /* position: relative; */
 }

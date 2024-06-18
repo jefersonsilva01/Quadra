@@ -136,7 +136,7 @@ const imageContainer = document.querySelectorAll(".image-container");
 imageContainer.forEach(element => {
   element.onclick = () => {
     modalSlide.style.visibility = 'visible';
-    content.style.height = '80%'
+    content.style.height = '100%'
     content.style.opacity = 1;
   }
 })

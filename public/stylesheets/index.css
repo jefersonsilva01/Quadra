@@ -60,6 +60,8 @@ nav {
 header {
   height: 100vh;
   max-width: 1790px;
+  min-width: 320px;
+  width: 100%;
   margin: 0 auto;
   background-image: url("../images/quadra-27.png");
   background-position: center;
@@ -144,6 +146,7 @@ header a:hover {
   display: flex;
   justify-content: space-around;
   text-align: center;
+  padding-left: 0;
 }
 
 #car-info h3 {
@@ -263,9 +266,7 @@ header a:hover {
 }
 
 #gallery {
-  max-width: 1790px;
-  margin: 0 auto 120px;
-  padding-top: 400px;
+  width: 100%;
   opacity: 0;
   display: flex;
   flex-direction: column;
@@ -274,13 +275,15 @@ header a:hover {
 }
 
 #image-container-16 img {
-  width: 1216px;
+  max-width: 1216px;
+  width: 100%;
   height: 408px;
   margin: 0 auto;
 }
 
 #gallery-images {
-  width: 1216px;
+  max-width: 1216px;
+  width: 100%;
   margin-top: 48px;
   display: flex;
   justify-content: space-between;
@@ -314,7 +317,7 @@ header a:hover {
 
 #specifications {
   max-width: 1790px;
-  margin: 0 auto 0;
+  margin: 110px auto 0;
   padding: 120px 112px 36px;
   background-color: var(--main-white);
   opacity: 0;
@@ -464,11 +467,10 @@ form button:hover {
 }
 
 #container-btn-top {
-  max-width: 1790px;
+  width: 100%;
   margin: 0 auto;
   position: fixed;
   bottom: 260px;
-  width: 100%;
 }
 
 #top-buttom {
@@ -493,7 +495,6 @@ form button:hover {
   position: fixed;
   top: 0%;
   bottom: 0%;
-  max-width: 1790px;
   width: 100%;
   height: 100%;
   margin: 0 auto;
@@ -504,12 +505,13 @@ form button:hover {
 
 #content {
   background-color: var(--main-white);
-  width: 1016px;
+  width: 80%;
   height: 0%;
   margin: 0 auto;
   border-radius: 4px;
   opacity: 0;
   transition: all 0.5s ease-in-out;
+  position: relative;
 }
 
 #icon {
@@ -534,8 +536,9 @@ form button:hover {
   position: absolute;
   max-width: 1016px;
   width: 1016px;
-  margin: 0 auto;
-  padding: 250px 16px 0;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0 16px;
 }
 
 #btns-slide svg {
@@ -585,6 +588,7 @@ form button:hover {
   border-radius: 4px;
   opacity: 1;
   transition: all 0.5s ease-in-out;
+  position: relative;
 }
 
 #modal-content p {
@@ -593,44 +597,395 @@ form button:hover {
   font-weight: 400;
   font-style: normal;
   text-align: center;
-  margin-top: 50px;
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 /* `sm` applies to x-small devices (portrait phones, less than 576px) */
-@media (max-width: 926px) {
+@media (max-width: 500px) {
+  nav {
+    margin: 0;
+    width: 100%;
+  }
+
   header {
     padding-left: 30px;
+    width: 100%;
+    height: 100%;
   }
 
   header h1 {
-    font-size: 15vh;
+    font-size: 30vw;
     top: 20%;
   }
 
   header h3 {
-    font-size: 5vh;
+    font-size: 10vw;
     top: 40%;
   }
 
   header a {
-    font-size: 5vh;
+    font-size: 5vw;
     top: 50%;
     padding: 8px 16px;
+  }
+
+  #car-info {
+    width: 100%;
+    position: relative;
+  }
+
+  #car-info ul {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  #car-info h3 {
+    font-size: 8vh;
+    margin: 24px 0 16px;
+  }
+
+  #car-info span {
+    font-size: 3vh;
+  }
+
+  #overview {
+    padding: 0 24px;
+  }
+
+  #overview-1 {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  #overview-2 {
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
+
+  #overview-1 p {
+    width: 100%;
+    margin-bottom: 48px;
+  }
+
+  #overview-2 p {
+    width: 100%;
+    margin-bottom: 48px;
+  }
+
+  #overview-1 .image-container {
+    width: 100%;
+    height: 100%;
+  }
+
+  #overview-2 .image-container {
+    width: 100%;
+    height: 100%;
+  }
+
+  #overview-2 a {
+    font-size: 3vh;
+    display: block;
+    margin: 0 auto 48px;
+    text-align: center;
+    width: 100%;
+    left: 0;
+    top: 0;
+  }
+
+  #gallery {
+    padding-top: 0px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  #image-container-16 img {
+    width: 100%;
+    height: 25vh;
+  }
+
+  #gallery-images {
+    flex-direction: column;
+    width: 100%;
+    height: 85vh;
+  }
+
+  #image-container-28 img {
+    width: 100%;
+    height: 30vh;
+  }
+
+  #image-container-01 img {
+    width: 100%;
+    height: 50vh;
+  }
+
+  #specifications {
+    max-width: 100%;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  #specifications img {
+    height: 20vh;
+  }
+
+  footer {
+    width: 100%;
+    padding: 36px 24px;
+  }
+
+  #contact {
+    flex-direction: column;
+  }
+
+  #contact ul {
+    margin-bottom: 36px;
+    width: 100%;
+  }
+
+  #contact form {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  form input {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+
+  form button {
+    width: 100%;
+    margin-left: 0px;
+  }
+
+  #footer-links {
+    flex-direction: column;
+  }
+
+  #footer-links ul {
+    flex-direction: column;
+    margin-bottom: 16px;
+  }
+
+  #container-btn-top {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  #modal-slider {
+    width: 100vw;
+  }
+
+  #modal-slider #content {
+    width: 100vw;
+  }
+
+  #btns-slide {
+    width: 100%;
+  }
+
+  #modal-content {
+    width: 100%;
+  }
+
+  #modal-content p {
+    font-size: 2rem;
   }
 }
 
 /* `lg` applies to medium devices (tablets, less than 992px) */
-/* @media (min-width: 576px) and (max-width: 991.98px) {
-  header h1 {
-    font-size: 10em;
-    top: 140;
+@media (min-width: 501px) and (max-width: 1024px) {
+  nav {
+    margin: 0;
+    width: 100%;
   }
-} */
 
-/* `xl` applies to large devices (desktops, less than 1200px)
-@media (max-width: 1199.98px) {
+  header h1 {
+    font-size: 10rem;
+  }
+
+  header h3 {
+    font-size: 3rem;
+  }
+
+  header a {
+    font-size: 2rem;
+  }
+
+  #car-info {
+    width: 100%;
+    position: relative;
+  }
+
+  #car-info ul {
+    flex-wrap: wrap;
+  }
+
+  #car-info ul li {
+    width: 50%;
+  }
+
+  #car-info h3 {
+    font-size: 8vh;
+    margin: 24px 0 16px;
+  }
+
+  #car-info span {
+    font-size: 3vh;
+  }
+
+  #overview {
+    padding: 0 24px;
+  }
+
+  #overview h5 {
+    font-size: 1.5em;
+  }
+
+  #overview-1 {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  #overview-1 div {
+    width: 60%;
+    display: inline;
+  }
+
+  #overview-1 p {
+    font-size: 2.2vw;
+    width: 80%;
+  }
+
+  #overview-2 {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  #overview-2 div {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 40px;
+  }
+
+  #overview-2 p {
+    font-size: 2.2vw;
+    width: 100%;
+  }
+
+  #overview-1 .image-container {
+    width: 50%;
+    height: 100%;
+  }
+
+  #overview-2 .image-container {
+    width: 50%;
+    height: 100%;
+    padding: 0;
+  }
+
+  #overview-2 a {
+    font-size: 2.2vw;
+    display: inline;
+    width: max-content;
+    left: 30vw;
+    top: 0;
+  }
+
+  #gallery {
+    width: 100%;
+    padding: 0 24px;
+  }
+
+  #image-container-16 img {
+    width: 100%;
+    height: 35vw;
+  }
+
+  #gallery-images {
+    width: 100%;
+  }
+
+  #image-container-28 img {
+    width: 100%;
+    height: 35vw;
+    margin: 0 auto;
+  }
+
+  #image-container-01 img {
+    width: 100%;
+    height: 35vw;
+    margin: 0 auto;
+  }
+
+  #specifications {
+    width: 100%;
+    padding: 24px 36px;
+  }
+
+  #specifications img {
+    height: 40vw;
+  }
+
+  footer {
+    width: 100%;
+    padding: 36px 24px;
+  }
+
+  form label {
+    display: inline;
+  }
+
+  #contact {
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
+  #contact form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 32px;
+  }
+
+  form button {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 16px;
+  }
+
+  #footer-links {
+    justify-content: space-around;
+    align-content: center;
+    flex-wrap: wrap;
+  }
+
+  #container-btn-top {
+    width: 100%;
+  }
+
+  #modal-slider {
+    width: 100%;
+  }
+
+  #content {
+    width: 100%;
+  }
+
+  #btns-slide {
+    width: 100%;
+  }
+
+  #modal-subscribe {
+    width: 100%;
+  }
+
+  #modal-content {
+    width: 100%;
+  }
 }
-
-`xxl` applies to x-large devices (large desktops, less than 1400px) 
-@media (max-width: 1399.98px) {
-} */
