@@ -15,7 +15,10 @@ router.post("/subscribe", (req, res) => {
   const { subscribe } = req.body;
 
   if (subscribe === '') {
-    res.status(400).render("index", { subscribe: "E-mail field are required." });
+    res.status(400).render("index", {
+      subscribe: "E-mail field are required.",
+      visibility: "visible"
+    });
     return;
   }
 
@@ -40,7 +43,10 @@ router.post("/subscribe", (req, res) => {
         html: subscribeTemplate.template(message)
       })
         .then(info => {
-          res.render("index", { subscribe: "You subscribe successeful" });
+          res.render("index", {
+            subscribe: "You subscribe successeful",
+            visibility: "visible"
+          });
         })
         .catch(error => console.log(error));
     })
@@ -49,7 +55,8 @@ router.post("/subscribe", (req, res) => {
         res.status(500).render("index", { subscribe: error.message });
       } else if (error.code = 11000) {
         res.status(500).render("index", {
-          subscribe: `E-mail need to be unique. Provide a valid email.`,
+          subscribe: "E-mail need to be unique. Provide a valid email.",
+          visibility: "visible"
         });
       } else {
         console.log(error);
