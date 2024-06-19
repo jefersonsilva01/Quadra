@@ -495,17 +495,17 @@ form button:hover {
   position: fixed;
   top: 0%;
   bottom: 0%;
+  max-width: 1790px;
   width: 100%;
   height: 100%;
   margin: 0 auto;
-  background-color: var(--dark-chalks);
-  padding: 150px 0 0;
+  background-color: rgb(24, 24, 26, 0.8);
+  padding: 100px 0 0;
   visibility: hidden;
 }
 
 #content {
-  background-color: var(--main-white);
-  width: 80%;
+  width: 850px;
   height: 0%;
   margin: 0 auto;
   border-radius: 4px;
@@ -534,7 +534,7 @@ form button:hover {
   display: flex;
   justify-content: space-between;
   position: absolute;
-  max-width: 1016px;
+  max-width: 850px;
   width: 1016px;
   top: 50%;
   transform: translateY(-50%);
@@ -575,7 +575,7 @@ form button:hover {
   width: 100%;
   height: 100%;
   margin: 0 auto;
-  background-color: var(--dark-chalks);
+  background-color: rgb(24, 24, 26, 0.8);
   padding: 250px 0 0;
   visibility: hidden;
 }
