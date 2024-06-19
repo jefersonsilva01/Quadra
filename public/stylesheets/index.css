@@ -354,10 +354,16 @@ header a:hover {
 }
 
 footer {
-  max-width: 1790px;
+  max-width: 1200px;
   margin: 0 auto;
   color: var(--main-white);
-  padding: 24px 112px 4px;
+  padding: 24px 16px 0px;
+}
+
+#contact {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 #contact ul {
@@ -366,10 +372,9 @@ footer {
   padding-left: 0;
 }
 
-#contact {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+#contact a {
+  text-decoration: none;
+  color: var(--main-white);
 }
 
 #contact h4 {
