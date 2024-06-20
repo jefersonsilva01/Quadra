@@ -10,6 +10,9 @@
   --dark-chalks: rgb(24, 24, 26);
   --main-white: rgb(255, 255, 255);
   --main-white-two-percent: rgba(255, 255, 255, 0.2);
+
+  --font-title: "Odibee Sans", sans-serif;
+  --font-body: "Anek Odia", sans-serif;
 }
 
 html {
