@@ -24,8 +24,8 @@ module.exports = (app) => {
       resave: false,
       saveUninitialized: false,
       store: MongoStore.create({
-        mongoUrl: process.env.MONGO_URI || "mongodb://localhost:27017/quadra",
         // mongoUrl: process.env.MONGO_URI_DEPLOY
+        mongoUrl: process.env.MONGO_URI || "mongodb://localhost:27017/quadra",
       })
     })
   );
