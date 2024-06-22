@@ -25,6 +25,18 @@
       <aside id="form-container">
         <a href="/" class="back">BACK TO HOME</a>
 
+        {{#if messageError}}
+          <p class="message error">
+            {{messageError}}
+          </p>
+        {{/if}}
+        
+        {{#if messageSuccess}}
+          <p class="message success">
+            {{messageSuccess}}
+          </p>
+        {{/if}}
+
         <form action="/auth/signup" method="post" enctype="multipart/form-data">
           <label for="username">Username</label>
           <input

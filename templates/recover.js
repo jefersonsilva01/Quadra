@@ -109,8 +109,8 @@ module.exports = {
                   
       <div
          style="font-family:Anek Odia, sans-serif;font-size:13px;line-height:22px;text-align:left;color:#55575d;"
-      ><p style="line-height: 30px; text-align: center; margin: 10px 0;color:#f5f5f5;font-size:25px;font-family:'Anek Odia',Helvetica,Arial,sans-serif"><span style="color:#ffffff;font-size:18px;font-family:'Anek Odia',Helvetica,Arial,sans-serif">You are signup successul, <br><br>
-      <a style="color:#ffffff;font-size:18px;font-family:'Anek Odia',Helvetica,Arial,sans-serif" href="${message}">Click here to confirm account</a>
+      ><p style="line-height: 30px; text-align: center; margin: 10px 0;color:#f5f5f5;font-size:25px;font-family:'Anek Odia',Helvetica,Arial,sans-serif"><span style="color:#ffffff;font-size:18px;font-family:'Anek Odia',Helvetica,Arial,sans-serif">You receive this e-mail to recovery your password, <br><br>
+      <a style="color:#ffffff;font-size:18px;font-family:'Anek Odia',Helvetica,Arial,sans-serif" href="${message}">Click here to reset your password</a>
       </span></p></div>
     
                 </td>

@@ -23,7 +23,7 @@ const userSchema = new Schema(
       type: String,
       enum: ['Pending Confirmation', 'Active']
     },
-    imaPath: String,
+    imgPath: String,
     imgName: String,
     confirmationCode: String
   },

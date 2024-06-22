@@ -76,6 +76,19 @@
   display: none;
 }
 
+.message {
+  border-radius: 4px;
+  padding: 8px;
+}
+
+.error {
+  background-color: rgb(216, 64, 64);
+}
+
+.success {
+  background-color: rgb(49, 202, 49);
+}
+
 #form-container form {
   display: flex;
   flex-direction: column;

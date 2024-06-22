@@ -18,6 +18,9 @@ app.use("/", index);
 const auth = require("./routes/auth/auth");
 app.use("/auth", auth);
 
+const logged = require("./routes/logged/logged");
+app.use("/logged", logged);
+
 require('./error-handling')(app);
 
 module.exports = app;
