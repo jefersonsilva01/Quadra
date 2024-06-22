@@ -29,8 +29,8 @@ module.exports = (app) => {
       resave: false,
       saveUninitialized: false,
       store: MongoStore.create({
-        // mongoUrl: process.env.MONGO_URI_DEPLOY
-        mongoUrl: process.env.MONGO_URI || "mongodb://localhost:27017/quadra",
+        mongoUrl: process.env.MONGO_URI_DEPLOY
+        // mongoUrl: process.env.MONGO_URI || "mongodb://localhost:27017/quadra",
       })
     })
   );
@@ -52,8 +52,8 @@ module.exports = (app) => {
   passport.use(new FacebookStrategy({
     clientID: process.env.FACEBOOK_APP_ID,
     clientSecret: process.env.FACEBOOK_APP_SECRET,
-    // callbackURL: "https://quadra-68d1b71920b6.herokuapp.com/auth/facebook/callback",
-    callbackURL: "http://localhost:3000/auth/facebook/callback",
+    callbackURL: "https://quadra-68d1b71920b6.herokuapp.com/auth/facebook/callback",
+    // callbackURL: "http://localhost:3000/auth/facebook/callback",
     state: true,
     profileFields: ['id', 'name'],
   },
@@ -83,8 +83,8 @@ module.exports = (app) => {
   passport.use(new GoogleStrategy({
     clientID: process.env.GOOGLE_CLIENT_ID,
     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    // callbackURL: "https://quadra-68d1b71920b6.herokuapp.com/auth/google/callback",
-    callbackURL: "http://localhost:3000/auth/google/callback",
+    callbackURL: "https://quadra-68d1b71920b6.herokuapp.com/auth/google/callback",
+    // callbackURL: "http://localhost:3000/auth/google/callback",
     passReqToCallback: true
   }, (request, accessToken, refreshToken, profile, done) => {
     // to see the structure of the data in received response:

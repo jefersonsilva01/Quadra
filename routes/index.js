@@ -33,8 +33,8 @@ router.post("/subscribe", (req, res) => {
         }
       });
 
-      // const message = "https://quadra-68d1b71920b6.herokuapp.com/auth/login"
-      const message = "http://localhost:3000/auth/login"
+      const message = "https://quadra-68d1b71920b6.herokuapp.com/auth/login"
+      // const message = "http://localhost:3000/auth/login"
 
       transporter.sendMail({
         from: '"Quadra " <quadra@project.com>',
