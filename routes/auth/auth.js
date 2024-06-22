@@ -2,6 +2,7 @@ require("dotenv").config();
 
 const express = require("express");
 const router = express.Router();
+const passport = require("passport");
 const nodemailer = require("nodemailer");
 const mongoose = require("mongoose");
 const User = require("../../models/User.model");
@@ -336,6 +337,30 @@ router.post("/password/:id", isLoggedOut, (req, res) => {
 
 
 });
+
+router.get("/facebook", passport.authenticate("facebook"));
+router.get("/facebook/callback", isLoggedOut,
+  passport.authenticate("facebook", {
+    failureRedirect: "/auth/signup",
+    successRedirect: "/logged/orders",
+    failureFlash: true,
+    passReqToCallback: true
+  })
+);
+
+router.get("/google", passport.authenticate("google", {
+  scope: [
+    "https://www.googleapis.com/auth/userinfo.profile",
+    "https://www.googleapis.com/auth/userinfo.email"
+  ]
+})
+);
+
+router.get("/google/callback",
+  passport.authenticate("google", { failureRedirect: "/auth/signup" }),
+  (req, res) => res.redirect("/logged/orders")
+);
+
 
 router.get("/logout", isLoggedIn, (req, res) => {
   req.session.destroy(err => {

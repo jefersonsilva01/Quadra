@@ -25,7 +25,7 @@ const userSchema = new Schema(
     },
     imgPath: String,
     imgName: String,
-    confirmationCode: String
+    confirmationCode: String,
   },
   {
     timestamps: true
