@@ -25,21 +25,65 @@
       <aside id="form-container">
         <a href="/" class="back">BACK TO HOME</a>
 
-        <form action="/signup" method="post">
+        {{#if messageError}}
+          <p class="message error">
+            {{messageError}}
+          </p>
+        {{/if}}
+        
+        {{#if messageSuccess}}
+          <p class="message success">
+            {{messageSuccess}}
+          </p>
+        {{/if}}
+
+        <form action="/auth/signup" method="post" enctype="multipart/form-data">
           <label for="username">Username</label>
-          <input type="text" id="username" placeholder="Chose an username" />
+          <input
+            {{#if username}}
+              value="{{username}}"
+            {{/if}}
+            required="true"
+            maxlength="60"
+            type="text"
+            id="username"
+            name="username"
+            placeholder="Chose an username"
+          />
 
           <label for="email">E-mail</label>
-          <input type="email" id="email" placeholder="Enter your e-mail" />
+          <input
+            {{#if email}}
+              value="{{email}}"
+            {{/if}}
+            required="true"
+            maxlength="60"
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter your e-mail"
+          />
 
           <label for="password">Password</label>
-          <input type="password" id="password" placeholder="****************" />
+          <input
+            {{#if password}}
+              value="{{password}}"
+            {{/if}}
+            required="true"
+            maxlength="120"
+            minlength="8"
+            type="password"
+            id="password"
+            name="password"
+            placeholder="****************"
+          />
 
           <label for="picture">CHOOSE A PICTURE</label>
           <input
+            accept=".png, .jpg, .jpeg, image/*"
             type="file"
-            name="picture"
             id="picture"
+            name="picture"
             placeholder="CHOOSE PICTURE"
           />
 
@@ -49,8 +93,8 @@
         <p>Or signup with</p>
 
         <div>
-          <a href="/google">GOOGLE</a>
-          <a href="/facebook">FACEBOOK</a>
+          <a href="/auth/google">GOOGLE</a>
+          <a href="/auth/facebook">FACEBOOK</a>
         </div>
 
         <p>Already have a count? Click

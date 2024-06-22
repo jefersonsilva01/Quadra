@@ -14,7 +14,7 @@ router.get("/", (req, res) => {
 router.post("/subscribe", (req, res) => {
   const { subscribe } = req.body;
 
-  if (subscribe === '') {
+  if (subscribe === "") {
     res.status(400).render("index", {
       subscribe: "E-mail field are required.",
       visibility: "visible"
@@ -33,7 +33,8 @@ router.post("/subscribe", (req, res) => {
         }
       });
 
-      const message = "http://localhost:3000/login"
+      const message = "https://quadra-68d1b71920b6.herokuapp.com/auth/login"
+      // const message = "http://localhost:3000/auth/login"
 
       transporter.sendMail({
         from: '"Quadra " <quadra@project.com>',

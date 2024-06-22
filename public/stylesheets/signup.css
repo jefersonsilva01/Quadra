@@ -76,6 +76,19 @@
   display: none;
 }
 
+.message {
+  border-radius: 4px;
+  padding: 8px;
+}
+
+.error {
+  background-color: rgb(216, 64, 64);
+}
+
+.success {
+  background-color: rgb(49, 202, 49);
+}
+
 #form-container form {
   display: flex;
   flex-direction: column;
@@ -85,7 +98,7 @@
 #form-container label {
   font-family: var(--font-body);
   font-size: 1.2em;
-  margin: 24px 0 16px;
+  margin: 24px 0 8px;
 }
 
 #form-container input {
