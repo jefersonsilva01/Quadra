@@ -11,6 +11,9 @@ const SocialLoginSchema = new Schema(
     email: String,
     facebookId: String,
     googleID: String,
+    status: String,
+    imgPath: String,
+    imgName: String,
   },
   {
     timestamps: true

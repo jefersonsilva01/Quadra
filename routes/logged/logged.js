@@ -3,6 +3,7 @@ require("dotenv").config();
 const express = require("express");
 const router = express.Router();
 const User = require("../../models/User.model");
+const SocialLogin = require("../../models/SocialLogin.model");
 const Order = require("../../models/Order.model");
 const uploadCloud = require("../../config/cloudinary");
 const isLoggedIn = require("../../middlewares/isLoggedIn");
@@ -14,6 +15,22 @@ router.get("/orders", isLoggedIn, (req, res) => {
 
 router.get("/profile", isLoggedIn, (req, res) => {
   const id = req.session.currentUser._id;
+
+  if ('facebookId' in req.session.currentUser || 'googleID' in req.session.currentUser) {
+
+    SocialLogin.findOne({ _id: id })
+      .then(user => {
+        res.render("logged/profile", {
+          id: user.id,
+          username: user.username,
+          email: user.email || '',
+          password: user.password || '',
+          image: user.imgPath,
+          alt: user.imgName
+        });
+      })
+      .catch(err => console.log(err));
+  }
 
   User.findOne({ _id: id })
     .then(user => {
