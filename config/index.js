@@ -9,7 +9,7 @@ const cookieParser = require("cookie-parser");
 const path = require("path");
 const session = require("express-session");
 const MongoStore = require("connect-mongo");
-const SocialLogin = require("../models/SocialLogin.model");
+const socialLogin = require("../models/SocialLogin.model");
 
 module.exports = (app) => {
   app.use(logger("dev"));
@@ -29,8 +29,8 @@ module.exports = (app) => {
       resave: false,
       saveUninitialized: false,
       store: MongoStore.create({
-        mongoUrl: process.env.MONGO_URI_DEPLOY
-        // mongoUrl: process.env.MONGO_URI || "mongodb://localhost:27017/quadra",
+        // mongoUrl: process.env.MONGO_URI_DEPLOY
+        mongoUrl: process.env.MONGO_URI || "mongodb://localhost:27017/quadra",
       })
     })
   );
@@ -39,9 +39,12 @@ module.exports = (app) => {
     callback(null, user._id);
   });
 
-  passport.deserializeUser((id, callback) => {
-    SocialLogin.findById(id)
+  passport.deserializeUser((req, id, callback) => {
+    socialLogin.findById(id)
       .then(user => {
+        if (user) {
+          req.session.currentUser = user.toObject();
+        }
         callback(null, user);
       })
       .catch(error => {
@@ -52,24 +55,38 @@ module.exports = (app) => {
   passport.use(new FacebookStrategy({
     clientID: process.env.FACEBOOK_APP_ID,
     clientSecret: process.env.FACEBOOK_APP_SECRET,
-    callbackURL: "https://quadra-68d1b71920b6.herokuapp.com/auth/facebook/callback",
-    // callbackURL: "http://localhost:3000/auth/facebook/callback",
+    // callbackURL: "https://quadra-68d1b71920b6.herokuapp.com/auth/facebook/callback",
+    callbackURL: "http://localhost:3000/auth/facebook/callback",
     state: true,
-    profileFields: ['id', 'name'],
+    profileFields: ['id', 'name', 'email'],
+    passReqToCallback: true
   },
-    function (accessToken, refreshToken, profile, cb) {
+    function (req, accessToken, refreshToken, profile, cb) {
       const id = profile.id;
       const name = profile.name.givenName;
+      // const email = profile.email;
 
-      SocialLogin.findOne({ facebookId: id })
+      socialLogin.findOne({ facebookId: id })
         .then(user => {
           if (!user) {
-            const newUser = new SocialLogin({ facebookId: id, username: name })
+            const newUser = new socialLogin(
+              {
+                username: name,
+                facebookId: id,
+                status: "Active",
+                imgPath: "../images/avatar.jpg",
+                imgName: 'Avatar',
+                // email
+              })
 
             newUser.save()
-              .then(newUser => cb(null, newUser))
+              .then(newUser => {
+                req.session.currentUser = newUser.toObject();
+                cb(null, newUser);
+              })
               .catch(error => cb(error));
           } else {
+            req.session.currentUser = user.toObject();
             cb(null, user);
           }
         })
@@ -83,8 +100,8 @@ module.exports = (app) => {
   passport.use(new GoogleStrategy({
     clientID: process.env.GOOGLE_CLIENT_ID,
     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    callbackURL: "https://quadra-68d1b71920b6.herokuapp.com/auth/google/callback",
-    // callbackURL: "http://localhost:3000/auth/google/callback",
+    // callbackURL: "https://quadra-68d1b71920b6.herokuapp.com/auth/google/callback",
+    callbackURL: "http://localhost:3000/auth/google/callback",
     passReqToCallback: true
   }, (request, accessToken, refreshToken, profile, done) => {
     // to see the structure of the data in received response:
@@ -94,22 +111,29 @@ module.exports = (app) => {
       return;
     }
 
-    SocialLogin.findOne({ googleID: profile.id, username: profile.displayName })
+    socialLogin.findOne({ googleID: profile.id })
       .then(user => {
         if (user) {
           return done(null, user);
         }
 
-        SocialLogin.create({ googleID: profile.id })
+        socialLogin.create(
+          {
+            username: profile.displayName,
+            googleID: profile.id,
+            status: "Active",
+            imgPath: "../images/avatar.jpg",
+            imgName: 'Avatar',
+            email: profile._json.email
+          }
+        )
           .then(newUser => {
             done(null, newUser);
           })
           .catch(err => done(err)); // closes User.create()
       })
       .catch(err => done(err)); // closes User.findOne()
-  }
-  )
-  );
+  }));
 
   app.use(passport.initialize());
   app.use(passport.session());

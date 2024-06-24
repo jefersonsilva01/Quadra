@@ -8,6 +8,7 @@ const SocialLoginSchema = new Schema(
       unique: false,
       trim: true
     },
+    email: String,
     facebookId: String,
     googleID: String,
   },

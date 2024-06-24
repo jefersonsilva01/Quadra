@@ -82,7 +82,7 @@ router.post("/signup", isLoggedOut, uploadCloud.single("picture"), (req, res) =>
     imgPath = req.file.url;
     imgName = req.file.originalname;
   } else {
-    imgPath = "../../public/images/avatar.jpg";
+    imgPath = "../images/avatar.jpg";
     imgName = 'Avatar';
   }
 
@@ -142,8 +142,8 @@ router.post("/signup", isLoggedOut, uploadCloud.single("picture"), (req, res) =>
         }
       });
 
-      const message = `https://quadra-68d1b71920b6.herokuapp.com/auth/confirm/${token}`
-      // const message = `http://localhost:3000/auth/confirm/${token}`;
+      // const message = `https://quadra-68d1b71920b6.herokuapp.com/auth/confirm/${token}`
+      const message = `http://localhost:3000/auth/confirm/${token}`;
 
       transporter.sendMail({
         from: '"Quadra " <quadra@project.com>',
@@ -227,8 +227,8 @@ router.post("/recover", isLoggedOut, (req, res) => {
         }
       });
 
-      const message = `https://quadra-68d1b71920b6.herokuapp.com/password/${user._id}`
-      // const message = `http://localhost:3000/auth/password/${user._id}`;
+      // const message = `https://quadra-68d1b71920b6.herokuapp.com/password/${user._id}`
+      const message = `http://localhost:3000/auth/password/${user._id}`;
 
       transporter.sendMail({
         from: '"Quadra " <quadra@project.com>',
@@ -269,7 +269,6 @@ router.get("/password/:id", isLoggedOut, (req, res) => {
 router.post("/password/:id", isLoggedOut, (req, res) => {
   const { password, confirmPassword } = req.body;
   const userID = req.params.id;
-  console.log(userID);
 
   if (password === "" || confirmPassword === "") {
     res.send(400).render("auth/password", {
@@ -342,10 +341,11 @@ router.get("/facebook", passport.authenticate("facebook"));
 router.get("/facebook/callback", isLoggedOut,
   passport.authenticate("facebook", {
     failureRedirect: "/auth/signup",
-    successRedirect: "/logged/orders",
     failureFlash: true,
     passReqToCallback: true
-  })
+  }), (req, res) => {
+    res.redirect("/logged/orders")
+  }
 );
 
 router.get("/google", passport.authenticate("google", {
@@ -356,9 +356,12 @@ router.get("/google", passport.authenticate("google", {
 })
 );
 
-router.get("/google/callback",
+router.get("/google/callback", isLoggedOut,
   passport.authenticate("google", { failureRedirect: "/auth/signup" }),
-  (req, res) => res.redirect("/logged/orders")
+  (req, res) => {
+    req.session.currentUser = req.user.toObject();
+    res.redirect("/logged/orders")
+  }
 );
 
 router.get("/logout", isLoggedIn, (req, res) => {
