@@ -66,7 +66,7 @@ router.post("/login", isLoggedOut, (req, res) => {
           }
           req.session.currentUser = user.toObject();
           delete req.session.currentUser.password;
-          res.redirect("/logged/orders");
+          res.redirect("/private/orders");
         })
         .catch(err => next(err));
     })
@@ -344,7 +344,7 @@ router.get("/facebook/callback", isLoggedOut,
     failureFlash: true,
     passReqToCallback: true
   }), (req, res) => {
-    res.redirect("/logged/orders")
+    res.redirect("/private/orders")
   }
 );
 
@@ -360,14 +360,14 @@ router.get("/google/callback", isLoggedOut,
   passport.authenticate("google", { failureRedirect: "/auth/signup" }),
   (req, res) => {
     req.session.currentUser = req.user.toObject();
-    res.redirect("/logged/orders")
+    res.redirect("/private/orders")
   }
 );
 
 router.get("/logout", isLoggedIn, (req, res) => {
   req.session.destroy(err => {
     if (err) {
-      res.status(500).render("logged/orders", {
+      res.status(500).render("private/orders", {
         messageError: err.message
       });
       return;

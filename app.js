@@ -18,8 +18,8 @@ app.use("/", index);
 const auth = require("./routes/auth/auth");
 app.use("/auth", auth);
 
-const logged = require("./routes/logged/logged");
-app.use("/logged", logged);
+const private = require("./routes/private/private");
+app.use("/private", private);
 
 require('./error-handling')(app);
 

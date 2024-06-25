@@ -79,6 +79,7 @@ nav .container-fluid {
   width: 100%;
   display: flex;
   justify-content: space-evenly;
+  flex-direction: column;
   align-items: center;
   margin-bottom: 32px;
   max-width: 450px;
@@ -151,28 +152,30 @@ nav .container-fluid {
   display: none;
 }
 
-#profile-buttons {
+#profile-buttons,
+#modal-buttons {
   margin-top: 32px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
   max-width: 450px;
+  margin: 32px auto 0;
 }
 
-#profile-buttons button[disabled="true"] {
+#profile-buttons a[disabled="true"] {
   background-color: var(--main-white-two-percent);
   color: var(--dark-chalks);
   border-color: transparent;
 }
 
-#profile-buttons button[disabled="true"]:hover {
+#profile-buttons a[disabled="true"]:hover {
   background-color: var(--main-white-two-percent);
   color: var(--dark-chalks);
   border-color: transparent;
 }
 
-#profile-buttons a,
-#profile-buttons button {
+#profile-buttons a {
   background-color: transparent;
   color: var(--main-white);
   font-size: 120%;
@@ -187,10 +190,79 @@ nav .container-fluid {
   transition: all 0.2s ease-in-out;
 }
 
-#profile-buttons a:hover,
-#profile-buttons button:hover {
+#profile-buttons a:hover {
   background-color: var(--main-white);
   color: var(--dark-chalks);
+}
+
+#cancel,
+#confirm {
+  background-color: transparent;
+  color: var(--dark-chalks);
+  font-size: 120%;
+  font-family: var(--font-body);
+  border: 1.5px solid var(--dark-chalks);
+  border-radius: 4px;
+  padding: 8px 12px;
+  text-align: center;
+  text-decoration: none;
+  width: 40%;
+  margin: 16px 0;
+  transition: all 0.2s ease-in-out;
+}
+
+#cancel:hover,
+#confirm:hover {
+  background-color: var(--dark-chalks);
+  color: var(--main-white);
+}
+
+#icon {
+  padding: 8px;
+  overflow: hidden;
+}
+
+#icon svg {
+  float: right;
+  cursor: pointer;
+  opacity: 1;
+  transition: opacity 0.2s ease-in-out;
+}
+
+#modal-update,
+#modal-delete {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  margin: auto 0;
+  background-color: rgb(24, 24, 26, 0.8);
+  visibility: hidden;
+}
+
+#modal-content,
+#modal-content {
+  background-color: var(--main-white);
+  max-width: 800px;
+  height: 0%;
+  margin: 25% auto;
+  border-radius: 4px;
+  opacity: 0;
+  position: relative;
+  transition: all 0.5s ease-in-out;
+}
+
+#modal-content p,
+#modal-content p {
+  font-family: "Anek Odia", sans-serif;
+  color: var(--dark-chalks);
+  font-size: 200%;
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+  padding-top: 25px;
+  width: 100%;
 }
 
 @media (min-width: 501px) and (max-width: 1024px) {
@@ -212,8 +284,7 @@ nav .container-fluid {
     flex-direction: column;
   }
 
-  #profile-buttons a,
-  #profile-buttons button {
+  #profile-buttons a {
     width: 100%;
   }
 }
@@ -247,8 +318,12 @@ nav .container-fluid {
     flex-direction: column;
   }
 
-  #profile-buttons a,
-  #profile-buttons button {
+  #profile-buttons a {
     width: 100%;
+  }
+
+  #modal-buttons {
+    display: flex;
+    flex-direction: column;
   }
 }

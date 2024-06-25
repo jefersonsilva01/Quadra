@@ -10,6 +10,7 @@ const SocialLoginSchema = new Schema(
     },
     email: String,
     facebookId: String,
+    password: String,
     googleID: String,
     status: String,
     imgPath: String,
