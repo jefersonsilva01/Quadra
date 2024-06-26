@@ -100,8 +100,8 @@ module.exports = (app) => {
   passport.use(new GoogleStrategy({
     clientID: process.env.GOOGLE_CLIENT_ID,
     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    // callbackURL: "https://quadra-68d1b71920b6.herokuapp.com/auth/google/callback",
-    callbackURL: "http://localhost:3000/auth/google/callback",
+    callbackURL: "https://quadra-68d1b71920b6.herokuapp.com/auth/google/callback",
+    // callbackURL: "http://localhost:3000/auth/google/callback",
     passReqToCallback: true
   }, (request, accessToken, refreshToken, profile, done) => {
     // to see the structure of the data in received response:
