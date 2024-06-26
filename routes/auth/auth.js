@@ -1,19 +1,18 @@
 require("dotenv").config();
 
-const express = require("express");
-const router = express.Router();
-const passport = require("passport");
-const nodemailer = require("nodemailer");
-const mongoose = require("mongoose");
-const User = require("../../models/User.model");
-const uploadCloud = require("../../config/cloudinary");
-const templateSignup = require("../../templates/signup");
-const templateRecover = require("../../templates/recover");
-const isLoggedOut = require("../../middlewares/isLoggedOut");
-const isLoggedIn = require("../../middlewares/isLoggedIn");
-
-const bcrypt = require("bcrypt");
-const saltRounds = 10;
+const express = require("express"),
+  router = express.Router(),
+  passport = require("passport"),
+  nodemailer = require("nodemailer"),
+  mongoose = require("mongoose"),
+  User = require("../../models/User.model"),
+  uploadCloud = require("../../config/cloudinary"),
+  templateSignup = require("../../templates/signup"),
+  templateRecover = require("../../templates/recover"),
+  isLoggedOut = require("../../middlewares/isLoggedOut"),
+  isLoggedIn = require("../../middlewares/isLoggedIn"),
+  bcrypt = require("bcrypt"),
+  saltRounds = 10;
 
 router.get("/login", isLoggedOut, (req, res) => {
   res.render("auth/login");

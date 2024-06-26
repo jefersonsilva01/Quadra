@@ -193,6 +193,7 @@ nav .container-fluid {
 #profile-buttons a:hover {
   background-color: var(--main-white);
   color: var(--dark-chalks);
+  cursor: pointer;
 }
 
 #cancel,
@@ -215,6 +216,7 @@ nav .container-fluid {
 #confirm:hover {
   background-color: var(--dark-chalks);
   color: var(--main-white);
+  cursor: pointer;
 }
 
 #icon {

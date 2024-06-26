@@ -1,15 +1,15 @@
-const express = require("express");
-const passport = require('passport');
-const flash = require('connect-flash');
-const FacebookStrategy = require('passport-facebook');
-const GoogleStrategy = require('passport-google-oauth20').Strategy;
-const favicon = require('serve-favicon');
-const logger = require("morgan");
-const cookieParser = require("cookie-parser");
-const path = require("path");
-const session = require("express-session");
-const MongoStore = require("connect-mongo");
-const socialLogin = require("../models/SocialLogin.model");
+const express = require("express"),
+  passport = require('passport'),
+  flash = require('connect-flash'),
+  FacebookStrategy = require('passport-facebook'),
+  GoogleStrategy = require('passport-google-oauth20').Strategy,
+  favicon = require('serve-favicon'),
+  logger = require("morgan"),
+  cookieParser = require("cookie-parser"),
+  path = require("path"),
+  session = require("express-session"),
+  MongoStore = require("connect-mongo"),
+  socialLogin = require("../models/SocialLogin.model");
 
 module.exports = (app) => {
   app.use(logger("dev"));
@@ -62,8 +62,8 @@ module.exports = (app) => {
     passReqToCallback: true
   },
     function (req, accessToken, refreshToken, profile, cb) {
-      const id = profile.id;
-      const name = profile.name.givenName;
+      const id = profile.id,
+        name = profile.name.givenName;
       // const email = profile.email;
 
       socialLogin.findOne({ facebookId: id })

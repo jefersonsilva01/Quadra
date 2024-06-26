@@ -1,13 +1,12 @@
-require("dotenv").config();
+require("dotenv/config");
 
-const express = require("express");
-const router = express.Router();
-const User = require("../../models/User.model");
-const SocialLogin = require("../../models/SocialLogin.model");
-const Order = require("../../models/Order.model");
-const uploadCloud = require("../../config/cloudinary");
-const isLoggedIn = require("../../middlewares/isLoggedIn");
-
+const express = require("express"),
+  router = express.Router(),
+  User = require("../../models/User.model"),
+  SocialLogin = require("../../models/SocialLogin.model"),
+  Order = require("../../models/Order.model"),
+  uploadCloud = require("../../config/cloudinary"),
+  isLoggedIn = require("../../middlewares/isLoggedIn");
 
 router.get("/orders", isLoggedIn, (req, res) => {
   res.render("private/orders");

@@ -1,8 +1,8 @@
 require('dotenv/config');
 
-const cloudinary = require('cloudinary');
-const cloudinaryStorage = require('multer-storage-cloudinary');
-const multer = require('multer');
+const cloudinary = require('cloudinary'),
+  cloudinaryStorage = require('multer-storage-cloudinary'),
+  multer = require('multer');
 
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_NAME,
@@ -10,7 +10,7 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_SECRET
 });
 
-var storage = cloudinaryStorage({
+let storage = cloudinaryStorage({
   cloudinary: cloudinary,
   folder: 'quadra', // The name of the folder in cloudinary
   allowedFormats: ['jpg', 'png', 'jpeg'],

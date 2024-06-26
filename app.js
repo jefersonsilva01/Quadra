@@ -1,9 +1,9 @@
 require("dotenv/config");
 require("./db");
 
-const express = require("express");
-const hbs = require("hbs");
-const app = express();
+const express = require("express"),
+  hbs = require("hbs"),
+  app = express();
 
 require("./config")(app);
 
