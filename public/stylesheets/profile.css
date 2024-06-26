@@ -229,8 +229,8 @@ nav .container-fluid {
   transition: opacity 0.2s ease-in-out;
 }
 
-#modal-update,
-#modal-delete {
+#modal,
+#modal {
   position: fixed;
   top: 0;
   left: 0;
