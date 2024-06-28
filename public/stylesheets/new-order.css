@@ -68,13 +68,13 @@ nav .container-fluid {
   margin: 0 auto;
 }
 
-.car-info,
 .car-info {
-  height: 100vh;
-  background-position: top;
+  height: auto;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
+  background-position: center;
   width: 50%;
+  height: 100vh;
   position: relative;
 }
 
@@ -87,7 +87,6 @@ nav .container-fluid {
 }
 
 #car-color {
-  height: 25%;
   width: 100%;
   background-color: var(--main-white);
   position: absolute;
@@ -100,11 +99,17 @@ nav .container-fluid {
   font-size: 420%;
 }
 
+#car-color p {
+  font-family: var(--font-body);
+  font-size: 120%;
+  margin-top: 24px;
+}
+
 #car-color label[for="dark-chalks"],
 #car-color label[for="arctic-white"] {
   border-radius: 50%;
-  width: 8%;
-  height: 20%;
+  width: 44px;
+  height: 44px;
   padding: 8px;
   border: 2px solid var(--main-white);
   cursor: pointer;
@@ -125,24 +130,9 @@ nav .container-fluid {
   margin-left: 24px;
 }
 
-#car-color p {
-  font-family: var(--font-body);
-  font-size: 120%;
-  margin-top: 24px;
-}
-
 #color span {
   opacity: 0;
   transition: opacity 0.2s ease;
-}
-
-#form-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 50%;
-  height: 100vh;
-  padding: 0 100px;
 }
 
 #dark-chalks,
@@ -163,31 +153,55 @@ nav .container-fluid {
   background-color: rgb(49, 202, 49);
 }
 
+#form-container {
+  width: 50%;
+  height: 100vh;
+  padding: 0 70px;
+}
+
 #form-container form {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   color: var(--main-white);
+  height: max-content;
+  padding: 25px 0;
+  height: 100%;
+}
+
+#form-container h2 {
+  font-family: var(--font-title);
+  letter-spacing: 2px;
+  padding-top: 40px;
+  font-size: 200%;
 }
 
 #form-container label {
   font-family: var(--font-body);
-  font-size: 1.2em;
   margin: 24px 0 8px;
+  display: block;
+  width: max-content;
+  font-size: 120%;
 }
 
 #form-container input {
   font-family: var(--font-body);
   font-size: 1.2em;
   color: var(--main-white);
-  height: 54px;
   background-color: var(--dark-chalks);
   border: 1.5px solid var(--main-white);
   border-radius: 4px;
   padding: 8px 16px 0;
+  transition: border 0.5s ease-in-out;
+  outline: none;
+  height: 56px;
+}
+
+#form-container input:focus {
+  border: 1.5px solid rgb(133, 81, 230);
 }
 
 #form-container button {
-  height: 54px;
   background-color: transparent;
   border: solid 1.5px var(--main-white);
   color: var(--main-white);
@@ -196,6 +210,8 @@ nav .container-fluid {
   font-size: 1.2em;
   margin-top: 10%;
   transition: all 0.2s ease-in-out;
+  width: 150px;
+  height: 56px;
 }
 
 #form-container button:hover {
@@ -203,36 +219,172 @@ nav .container-fluid {
   background-color: var(--main-white);
 }
 
+#container-1 {
+  display: block;
+}
+
+#container-2 {
+  display: none;
+}
+
+#container-1 > div,
+#container-2 > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+
+.btns {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 20%;
+  margin: 32px auto 0;
+}
+
+.btns > div {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--main-white-two-percent);
+  display: inline;
+  transition: background-color 0.5s ease-in-out;
+}
+
+.btns > div:hover {
+  background-color: var(--main-white);
+  cursor: pointer;
+}
+
+#input-container {
+  width: 70%;
+}
+
+#country,
+#address-code {
+  width: 100%;
+}
+
+#state,
+#number {
+  width: 92px;
+}
+
+#expirate-date {
+  width: 121px;
+}
+
+#cvc {
+  width: 99px;
+}
+
+input#card-name,
+input#card-number {
+  width: 100%;
+}
+
+input#city,
+input#street {
+  width: 100%;
+}
+
 @media (min-width: 501px) and (max-width: 1024px) {
-  #form-container {
-    width: 100%;
-    background-image: url("../images/quadra-15.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-    z-index: 1;
+  #new-order-container {
+    display: flex;
+    flex-direction: column;
   }
 
-  #form-container::before {
+  .car-info {
     width: 100%;
-    height: 100%;
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgb(33, 33, 34);
-    opacity: 0.9;
-    z-index: -1;
+    position: relative;
+  }
+
+  #form-container {
+    width: 100%;
+    height: max-content;
+  }
+
+  #form-container form {
+    height: max-content;
+    margin-bottom: 32px;
+  }
+
+  #city,
+  #street {
+    width: 400px;
+  }
+
+  #car-color {
+    height: 250px;
+  }
+
+  #car-color p {
+    font-size: 150%;
   }
 }
 
 @media (max-width: 500px) {
+  form > div {
+    display: block;
+  }
+
+  #new-order-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .car-info {
+    width: 100%;
+    position: relative;
+  }
+
   #form-container {
     height: auto;
     width: 100%;
     padding: 0 24px;
+  }
+
+  #state,
+  #number,
+  #expirate-date,
+  #cvc,
+  #city,
+  #street {
+    width: 100%;
+  }
+
+  #form-container button {
+    width: 100%;
+    margin-bottom: 32px;
+  }
+
+  #car-color h1 {
+    font-family: var(--font-title);
+    font-size: 2em;
+  }
+
+  #car-color p {
+    font-family: var(--font-body);
+    font-size: 120%;
+    margin-top: 12px;
+  }
+
+  #car-color label[for="dark-chalks"],
+  #car-color label[for="arctic-white"] {
+    width: 24px;
+    height: 24px;
+  }
+
+  #car-color {
+    height: 150px;
+  }
+
+  #container-1 > div,
+  #container-2 > div {
+    display: block;
+  }
+
+  #input-container {
+    width: 100%;
   }
 }

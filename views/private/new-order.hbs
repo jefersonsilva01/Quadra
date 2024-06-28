@@ -79,156 +79,184 @@
           </p>
         {{/if}} --}}
 
-        <form action="/private/new-order" method="post" enctype="multipart/form-data">
+        <form action="/private/new-order" method="post">
+          <h2>CHECKOUT</h2>
           <input type="radio" value="dark-chalks" name="color" id="dark-chalks">
           <input type="radio" value="arctic-white" name="color" id="arctic-white">
 
-          <label for="address-code">Addres code</label>
-          <input
-            {{!-- {{#if address}}
-              value="{{address}}"
-            {{/if}} --}}
-            required="true"
-            maxlength="9"
-            type="text"
-            id="address-code"
-            name="address-code"
-            placeholder="00000-000"
-          />
+          <div id="container">
+            <div id="container-1">
+              <label for="address-code">Addres code</label>
+              <input
+                {{#if address}}
+                  value="{{address}}"
+                {{/if}}
+                required="true"
+                maxlength="9"
+                type="text"
+                id="address-code"
+                name="address-code"
+                placeholder="00000-000"
+              />
 
-          <label for="country">Country</label>
-          <input
-            {{!-- {{#if country}}
-              value="{{country}}"
-            {{/if}} --}}
-            required="true"
-            maxlength="60"
-            type="country"
-            id="country"
-            name="country"
-            placeholder="BRAZIL"
-          />
+              <label for="country">Country</label>
+              <input
+                {{#if country}}
+                  value="{{country}}"
+                {{/if}}
+                required="true"
+                maxlength="60"
+                type="country"
+                id="country"
+                name="country"
+                placeholder="BRAZIL"
+              />
 
-          <label for="city">City</label>
-          <input
-            {{!-- {{#if city}}
-              value="{{city}}"
-            {{/if}} --}}
-            required="true"
-            maxlength="60"
-            type="city"
-            id="city"
-            name="city"
-            placeholder="SÃO PAULO"
-          />
+              <div>
+                <div id="input-container">
+                  <label for="city">City</label>
+                  <input
+                    {{#if city}}
+                      value="{{city}}"
+                    {{/if}}
+                    required="true"
+                    maxlength="60"
+                    type="city"
+                    id="city"
+                    name="city"
+                    placeholder="SÃO PAULO"
+                  />
+                </div>
 
-          <label for="state">State</label>
-          <input
-            {{!-- {{#if state}}
-              value="{{state}}"
-            {{/if}} --}}
-            required="true"
-            maxlength="120"
-            minlength="8"
-            type="state"
-            id="state"
-            name="state"
-            placeholder="SP"
-          />
+                <div>
+                  <label for="state">State</label>
+                  <input
+                    {{#if state}}
+                      value="{{state}}"
+                    {{/if}}
+                    required="true"
+                    maxlength="120"
+                    minlength="8"
+                    type="state"
+                    id="state"
+                    name="state"
+                    placeholder="SP"
+                  />
+                </div>
+              </div>
 
-          <label for="street">Street</label>
-          <input
-            {{!-- {{#if street}}
-              value="{{street}}"
-            {{/if}} --}}
-            required="true"
-            maxlength="120"
-            minlength="8"
-            type="street"
-            id="street"
-            name="street"
-            placeholder="SMALL STREET"
-          />
+              <div>
+                <div id="input-container">
+                  <label for="street">Street</label>
+                  <input
+                    {{#if street}}
+                      value="{{street}}"
+                    {{/if}}
+                    required="true"
+                    maxlength="120"
+                    minlength="8"
+                    type="street"
+                    id="street"
+                    name="street"
+                    placeholder="SMALL STREET"
+                  />
+                </div>
+                
+                <div>
+                  <label for="number">Number</label>
+                  <input
+                    {{#if number}}
+                      value="{{number}}"
+                    {{/if}}
+                    required="true"
+                    maxlength="5"
+                    type="text"
+                    id="number"
+                    name="number"
+                    placeholder="451"
+                    list="none"
+                  />
+                </div>
+              </div>
+            </div>
 
-          <label for="number">Number</label>
-          <input
-            {{!-- {{#if number}}
-              value="{{number}}"
-            {{/if}} --}}
-            required="true"
-            maxlength="120"
-            minlength="8"
-            type="number"
-            id="number"
-            name="number"
-            placeholder="451"
-          />
+            <div id="container-2">
+              <label for="card-name">Cardholders name</label>
+              <input
+                {{#if card-name}}
+                  value="{{card-name}}"
+                {{/if}}
+                required="true"
+                maxlength="120"
+                minlength="8"
+                type="card-name"
+                id="card-name"
+                name="card-name"
+                placeholder="NAME"
+              />
 
-          <label for="card-name">Cardholders name</label>
-          <input
-            {{!-- {{#if card-name}}
-              value="{{card-name}}"
-            {{/if}} --}}
-            required="true"
-            maxlength="120"
-            minlength="8"
-            type="card-name"
-            id="card-name"
-            name="card-name"
-            placeholder="NAME"
-          />
+              <label for="card-number">Card number</label>
+              <input
+                {{#if card-number}}
+                  value="{{card-number}}"
+                {{/if}}
+                required="true"
+                maxlength="120"
+                minlength="8"
+                type="card-number"
+                id="card-number"
+                name="card-number"
+                placeholder="4103 **** **** 8630"
+              />
 
-          <label for="card-number">Card number</label>
-          <input
-            {{!-- {{#if card-number}}
-              value="{{card-number}}"
-            {{/if}} --}}
-            required="true"
-            maxlength="120"
-            minlength="8"
-            type="card-number"
-            id="card-number"
-            name="card-number"
-            placeholder="4103 **** **** 8630"
-          />
+              <div>
+                <div>
+                  <label for="expirate-date">Expirate date</label>
+                  <input
+                    {{#if expirate-date}}
+                      value="{{expirate-date}}"
+                    {{/if}}
+                    required="true"
+                    maxlength="120"
+                    minlength="8"
+                    type="expirate-date"
+                    id="expirate-date"
+                    name="expirate-date"
+                    placeholder="00/00"
+                  />
+                </div>
+                
+                <div>
+                  <label for="cvc">CVC</label>
+                  <input
+                    {{#if cvc}}
+                      value="{{cvc}}"
+                    {{/if}}
+                    required="true"
+                    maxlength="120"
+                    minlength="8"
+                    type="cvc"
+                    id="cvc"
+                    name="cvc"
+                    placeholder="336"
+                  />
+                </div>
 
-          <label for="expirate-date">Expirate date</label>
-          <input
-            {{!-- {{#if expirate-date}}
-              value="{{expirate-date}}"
-            {{/if}} --}}
-            required="true"
-            maxlength="120"
-            minlength="8"
-            type="expirate-date"
-            id="expirate-date"
-            name="expirate-date"
-            placeholder="00/00"
-          />
+                <button type="submit">ORDER NOW</button>
+              </div>
+            </div>
+          </div>
 
-          <label for="card-number">Card number</label>
-          <input
-            {{!-- {{#if card-number}}
-              value="{{card-number}}"
-            {{/if}} --}}
-            required="true"
-            maxlength="120"
-            minlength="8"
-            type="card-number"
-            id="card-number"
-            name="card-number"
-            placeholder="336"
-          />
-
-          <button type="submit">ORDER NOW</button>
+          <div class="btns">
+            <div class="left"></div>
+            <div class="right"></div>
+          </div>
         </form>
       </aside>
     </div>
 
-    <script src="../js/private.js">
-    </script>
-    <script src="../js/new-order.js">
-    </script>
+    <script src="../js/private.js"></script>
+    <script src="../js/new-order.js"></script>
 
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"

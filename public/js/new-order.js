@@ -29,3 +29,19 @@ radioWhite.addEventListener('click', () => {
     labelDark.classList.toggle('color-active');
   }
 });
+
+const container1 = document.getElementById("container-1");
+const container2 = document.getElementById("container-2");
+
+const btnLeft = document.querySelector(".left");
+const btnRight = document.querySelector(".right");
+
+btnRight.onclick = () => {
+  container1.style.display = "none";
+  container2.style.display = "block";
+}
+
+btnLeft.onclick = () => {
+  container2.style.display = "none";
+  container1.style.display = "block";
+}

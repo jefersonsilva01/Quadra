@@ -85,6 +85,12 @@
   border-radius: 4px;
   padding: 16px;
   margin-bottom: 32px;
+  transition: border 0.5s ease-in-out;
+  outline: none;
+}
+
+#form-recover input:focus {
+  border: 1.5px solid rgb(133, 81, 230);
 }
 
 #form-recover button {
