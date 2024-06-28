@@ -62,8 +62,177 @@ nav .container-fluid {
   color: var(--dark-chalks);
 }
 
+#new-order-container {
+  display: flex;
+  max-width: 1790px;
+  margin: 0 auto;
+}
+
+.car-info,
+.car-info {
+  height: 100vh;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 50%;
+  position: relative;
+}
+
+.car-info-dark {
+  background-image: url("../images/quadra-15.png");
+}
+
+.car-info-white {
+  background-image: url("../images/quadra-11.png");
+}
+
+#car-color {
+  height: 25%;
+  width: 100%;
+  background-color: var(--main-white);
+  position: absolute;
+  bottom: 0;
+  padding: 16px 48px;
+}
+
+#car-color h1 {
+  font-family: var(--font-title);
+  font-size: 420%;
+}
+
+#car-color label[for="dark-chalks"],
+#car-color label[for="arctic-white"] {
+  border-radius: 50%;
+  width: 8%;
+  height: 20%;
+  padding: 8px;
+  border: 2px solid var(--main-white);
+  cursor: pointer;
+  box-shadow: transparent;
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.color-active {
+  box-shadow: 0px 0px 2px 5px rgb(185, 194, 185);
+}
+
+#car-color label[for="dark-chalks"] {
+  background-color: var(--dark-chalks);
+}
+
+#car-color label[for="arctic-white"] {
+  background-color: var(--arctic-white);
+  margin-left: 24px;
+}
+
+#car-color p {
+  font-family: var(--font-body);
+  font-size: 120%;
+  margin-top: 24px;
+}
+
+#color span {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+#form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+  height: 100vh;
+  padding: 0 100px;
+}
+
+#dark-chalks,
+#arctic-white {
+  display: none;
+}
+
+.message {
+  border-radius: 4px;
+  padding: 8px;
+}
+
+.error {
+  background-color: rgb(216, 64, 64);
+}
+
+.success {
+  background-color: rgb(49, 202, 49);
+}
+
+#form-container form {
+  display: flex;
+  flex-direction: column;
+  color: var(--main-white);
+}
+
+#form-container label {
+  font-family: var(--font-body);
+  font-size: 1.2em;
+  margin: 24px 0 8px;
+}
+
+#form-container input {
+  font-family: var(--font-body);
+  font-size: 1.2em;
+  color: var(--main-white);
+  height: 54px;
+  background-color: var(--dark-chalks);
+  border: 1.5px solid var(--main-white);
+  border-radius: 4px;
+  padding: 8px 16px 0;
+}
+
+#form-container button {
+  height: 54px;
+  background-color: transparent;
+  border: solid 1.5px var(--main-white);
+  color: var(--main-white);
+  font-family: var(--font-body);
+  border-radius: 4px;
+  font-size: 1.2em;
+  margin-top: 10%;
+  transition: all 0.2s ease-in-out;
+}
+
+#form-container button:hover {
+  color: var(--dark-chalks);
+  background-color: var(--main-white);
+}
+
 @media (min-width: 501px) and (max-width: 1024px) {
+  #form-container {
+    width: 100%;
+    background-image: url("../images/quadra-15.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+  }
+
+  #form-container::before {
+    width: 100%;
+    height: 100%;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgb(33, 33, 34);
+    opacity: 0.9;
+    z-index: -1;
+  }
 }
 
 @media (max-width: 500px) {
+  #form-container {
+    height: auto;
+    width: 100%;
+    padding: 0 24px;
+  }
 }

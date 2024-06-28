@@ -55,8 +55,181 @@
       </div>
     </nav>
 
-    {{! <script src="../js/new-order.js">
-    </script> }}
+    <div id="new-order-container">
+      <aside class="car-info car-info-dark">
+        <div id="car-color">
+          <h1>$123.490</h1>
+          <label for="dark-chalks"></label>
+          <label for="arctic-white"></label>
+          <strong><p>COLOR:</strong> <span></span></p>
+        </div>
+      </aside>
+
+      <aside id="form-container">
+
+        {{!-- {{#if messageError}}
+          <p class="message error">
+            {{messageError}}
+          </p>
+        {{/if}}
+        
+        {{#if messageSuccess}}
+          <p class="message success">
+            {{messageSuccess}}
+          </p>
+        {{/if}} --}}
+
+        <form action="/private/new-order" method="post" enctype="multipart/form-data">
+          <input type="radio" value="dark-chalks" name="color" id="dark-chalks">
+          <input type="radio" value="arctic-white" name="color" id="arctic-white">
+
+          <label for="address-code">Addres code</label>
+          <input
+            {{!-- {{#if address}}
+              value="{{address}}"
+            {{/if}} --}}
+            required="true"
+            maxlength="9"
+            type="text"
+            id="address-code"
+            name="address-code"
+            placeholder="00000-000"
+          />
+
+          <label for="country">Country</label>
+          <input
+            {{!-- {{#if country}}
+              value="{{country}}"
+            {{/if}} --}}
+            required="true"
+            maxlength="60"
+            type="country"
+            id="country"
+            name="country"
+            placeholder="BRAZIL"
+          />
+
+          <label for="city">City</label>
+          <input
+            {{!-- {{#if city}}
+              value="{{city}}"
+            {{/if}} --}}
+            required="true"
+            maxlength="60"
+            type="city"
+            id="city"
+            name="city"
+            placeholder="SÃO PAULO"
+          />
+
+          <label for="state">State</label>
+          <input
+            {{!-- {{#if state}}
+              value="{{state}}"
+            {{/if}} --}}
+            required="true"
+            maxlength="120"
+            minlength="8"
+            type="state"
+            id="state"
+            name="state"
+            placeholder="SP"
+          />
+
+          <label for="street">Street</label>
+          <input
+            {{!-- {{#if street}}
+              value="{{street}}"
+            {{/if}} --}}
+            required="true"
+            maxlength="120"
+            minlength="8"
+            type="street"
+            id="street"
+            name="street"
+            placeholder="SMALL STREET"
+          />
+
+          <label for="number">Number</label>
+          <input
+            {{!-- {{#if number}}
+              value="{{number}}"
+            {{/if}} --}}
+            required="true"
+            maxlength="120"
+            minlength="8"
+            type="number"
+            id="number"
+            name="number"
+            placeholder="451"
+          />
+
+          <label for="card-name">Cardholders name</label>
+          <input
+            {{!-- {{#if card-name}}
+              value="{{card-name}}"
+            {{/if}} --}}
+            required="true"
+            maxlength="120"
+            minlength="8"
+            type="card-name"
+            id="card-name"
+            name="card-name"
+            placeholder="NAME"
+          />
+
+          <label for="card-number">Card number</label>
+          <input
+            {{!-- {{#if card-number}}
+              value="{{card-number}}"
+            {{/if}} --}}
+            required="true"
+            maxlength="120"
+            minlength="8"
+            type="card-number"
+            id="card-number"
+            name="card-number"
+            placeholder="4103 **** **** 8630"
+          />
+
+          <label for="expirate-date">Expirate date</label>
+          <input
+            {{!-- {{#if expirate-date}}
+              value="{{expirate-date}}"
+            {{/if}} --}}
+            required="true"
+            maxlength="120"
+            minlength="8"
+            type="expirate-date"
+            id="expirate-date"
+            name="expirate-date"
+            placeholder="00/00"
+          />
+
+          <label for="card-number">Card number</label>
+          <input
+            {{!-- {{#if card-number}}
+              value="{{card-number}}"
+            {{/if}} --}}
+            required="true"
+            maxlength="120"
+            minlength="8"
+            type="card-number"
+            id="card-number"
+            name="card-number"
+            placeholder="336"
+          />
+
+          <button type="submit">ORDER NOW</button>
+        </form>
+      </aside>
+    </div>
+
+    <script src="../js/private.js">
+    </script>
+    <script src="../js/new-order.js">
+    </script>
+
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
       integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
