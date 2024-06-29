@@ -145,7 +145,11 @@ router.post("/new-order", isLoggedIn, (req, res) => {
     cvc
   });
 
-  res.render("private/new-order");
+  res.redirect("/private/ordered");
+});
+
+router.get("/ordered", isLoggedIn, (req, res) => {
+  res.render("private/ordered");
 });
 
 module.exports = router;
