@@ -66,19 +66,6 @@
       </aside>
 
       <aside id="form-container">
-
-        {{!-- {{#if messageError}}
-          <p class="message error">
-            {{messageError}}
-          </p>
-        {{/if}}
-        
-        {{#if messageSuccess}}
-          <p class="message success">
-            {{messageSuccess}}
-          </p>
-        {{/if}} --}}
-
         <form action="/private/new-order" method="post">
           <h2>CHECKOUT</h2>
           <input type="radio" value="dark-chalks" name="color" id="dark-chalks">
@@ -93,23 +80,11 @@
                 {{/if}}
                 required="true"
                 maxlength="9"
+                minlength="9"
                 type="text"
                 id="address-code"
-                name="address-code"
+                name="addressCode"
                 placeholder="00000-000"
-              />
-
-              <label for="country">Country</label>
-              <input
-                {{#if country}}
-                  value="{{country}}"
-                {{/if}}
-                required="true"
-                maxlength="60"
-                type="country"
-                id="country"
-                name="country"
-                placeholder="BRAZIL"
               />
 
               <div>
@@ -120,8 +95,8 @@
                       value="{{city}}"
                     {{/if}}
                     required="true"
-                    maxlength="60"
-                    type="city"
+                    maxlength="120"
+                    type="text"
                     id="city"
                     name="city"
                     placeholder="SÃO PAULO"
@@ -135,9 +110,9 @@
                       value="{{state}}"
                     {{/if}}
                     required="true"
-                    maxlength="120"
-                    minlength="8"
-                    type="state"
+                    maxlength="2"
+                    minlength="2"
+                    type="text"
                     id="state"
                     name="state"
                     placeholder="SP"
@@ -154,8 +129,7 @@
                     {{/if}}
                     required="true"
                     maxlength="120"
-                    minlength="8"
-                    type="street"
+                    type="text"
                     id="street"
                     name="street"
                     placeholder="SMALL STREET"
@@ -188,10 +162,9 @@
                 {{/if}}
                 required="true"
                 maxlength="120"
-                minlength="8"
-                type="card-name"
+                type="text"
                 id="card-name"
-                name="card-name"
+                name="cardName"
                 placeholder="NAME"
               />
 
@@ -201,11 +174,11 @@
                   value="{{card-number}}"
                 {{/if}}
                 required="true"
-                maxlength="120"
-                minlength="8"
-                type="card-number"
+                maxlength="19"
+                minlength="19"
+                type="text"
                 id="card-number"
-                name="card-number"
+                name="cardNumber"
                 placeholder="4103 **** **** 8630"
               />
 
@@ -217,11 +190,11 @@
                       value="{{expirate-date}}"
                     {{/if}}
                     required="true"
-                    maxlength="120"
-                    minlength="8"
-                    type="expirate-date"
+                    maxlength="5"
+                    minlength="5"
+                    type="text"
                     id="expirate-date"
-                    name="expirate-date"
+                    name="expirateDate"
                     placeholder="00/00"
                   />
                 </div>
@@ -233,16 +206,16 @@
                       value="{{cvc}}"
                     {{/if}}
                     required="true"
-                    maxlength="120"
-                    minlength="8"
-                    type="cvc"
+                    maxlength="3"
+                    minlength="3"
+                    type="text"
                     id="cvc"
                     name="cvc"
                     placeholder="336"
                   />
                 </div>
 
-                <button type="submit">ORDER NOW</button>
+                <button id="order-now" type="submit" disabled="true">ORDER NOW</button>
               </div>
             </div>
           </div>
@@ -255,6 +228,7 @@
       </aside>
     </div>
 
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="../js/private.js"></script>
     <script src="../js/new-order.js"></script>
 

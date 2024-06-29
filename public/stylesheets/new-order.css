@@ -79,16 +79,16 @@ nav .container-fluid {
 }
 
 .car-info-dark {
-  background-image: url("../images/quadra-15.png");
+  background-image: url("../images/quadra-27.png");
 }
 
 .car-info-white {
-  background-image: url("../images/quadra-11.png");
+  background-image: url("../images/quadra-09.png");
 }
 
 #car-color {
   width: 100%;
-  background-color: var(--main-white);
+  background-color: rgb(255, 255, 255, 0.6);
   position: absolute;
   bottom: 0;
   padding: 16px 48px;
@@ -118,7 +118,7 @@ nav .container-fluid {
 }
 
 .color-active {
-  box-shadow: 0px 0px 2px 5px rgb(185, 194, 185);
+  box-shadow: 0px 0px 2px 5px rgb(133, 81, 230);
 }
 
 #car-color label[for="dark-chalks"] {
@@ -214,6 +214,18 @@ nav .container-fluid {
   height: 56px;
 }
 
+#form-container button[disabled="true"] {
+  background-color: var(--main-white-two-percent);
+  color: var(--dark-chalks);
+  border-color: transparent;
+}
+
+#form-container button[disabled="true"]:hover {
+  background-color: var(--main-white-two-percent);
+  color: var(--dark-chalks);
+  border-color: transparent;
+}
+
 #form-container button:hover {
   color: var(--dark-chalks);
   background-color: var(--main-white);
@@ -268,19 +280,23 @@ nav .container-fluid {
 #state,
 #number {
   width: 92px;
+  text-align: center;
 }
 
 #expirate-date {
   width: 121px;
+  text-align: center;
 }
 
 #cvc {
   width: 99px;
+  text-align: center;
 }
 
 input#card-name,
 input#card-number {
   width: 100%;
+  text-transform: uppercase;
 }
 
 input#city,

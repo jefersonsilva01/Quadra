@@ -109,4 +109,43 @@ router.get("/new-order", isLoggedIn, (req, res) => {
   res.render("private/new-order");
 });
 
+router.post("/new-order", isLoggedIn, (req, res) => {
+  const {
+    color,
+    addressCode,
+    city,
+    state,
+    street,
+    number,
+    cardName,
+    cardNumber,
+    expirateDate,
+    cvc
+  } = req.body;
+
+  let imgPath;
+
+  if (color === 'dark-chalks') {
+    imgPath = '../images/quadra-27.png'
+  } else {
+    imgPath = '../images/quadra-09.png'
+  }
+
+  Order.create({
+    color,
+    imgPath,
+    addressCode,
+    city,
+    state,
+    street,
+    number,
+    cardName,
+    cardNumber,
+    expirateDate,
+    cvc
+  });
+
+  res.render("private/new-order");
+});
+
 module.exports = router;
