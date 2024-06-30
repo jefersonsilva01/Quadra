@@ -61,22 +61,43 @@
           <h1>$123.490</h1>
           <label for="dark-chalks"></label>
           <label for="arctic-white"></label>
-          <strong><p>COLOR:</strong> <span></span></p>
+          <strong><p>COLOR:</strong> <span>{{#if color}}{{color}}{{/if}}</span></p>
         </div>
       </aside>
 
       <aside id="form-container">
-        <form action="/private/new-order" method="post">
+        <form 
+        {{#if _id}}
+          action="/private/update-order/{{_id}}"
+        {{else}}
+          action="/private/new-order"
+        {{/if}}
+          method="post">
+          
           <h2>CHECKOUT</h2>
-          <input type="radio" value="dark-chalks" name="color" id="dark-chalks">
-          <input type="radio" value="arctic-white" name="color" id="arctic-white">
+
+          <input type="radio" 
+            {{#if darkChalks}}
+              checked
+            {{/if}}
+            value="DARK CHALKS" 
+            name="color" 
+            id="dark-chalks">
+          
+          <input type="radio" 
+            {{#if arcticWhite}}
+              checked
+            {{/if}}
+            value="ARCTIC WHITE" 
+            name="color" 
+            id="arctic-white">
 
           <div id="container">
             <div id="container-1">
               <label for="address-code">Addres code</label>
               <input
-                {{#if address}}
-                  value="{{address}}"
+                {{#if addressCode}}
+                  value="{{addressCode}}"
                 {{/if}}
                 required="true"
                 maxlength="9"
@@ -157,8 +178,8 @@
             <div id="container-2">
               <label for="card-name">Cardholders name</label>
               <input
-                {{#if card-name}}
-                  value="{{card-name}}"
+                {{#if cardName}}
+                  value="{{cardName}}"
                 {{/if}}
                 required="true"
                 maxlength="120"
@@ -170,8 +191,8 @@
 
               <label for="card-number">Card number</label>
               <input
-                {{#if card-number}}
-                  value="{{card-number}}"
+                {{#if cardNumber}}
+                  value="{{cardNumber}}"
                 {{/if}}
                 required="true"
                 maxlength="19"
@@ -186,8 +207,8 @@
                 <div>
                   <label for="expirate-date">Expirate date</label>
                   <input
-                    {{#if expirate-date}}
-                      value="{{expirate-date}}"
+                    {{#if expirateDate}}
+                      value="{{expirateDate}}"
                     {{/if}}
                     required="true"
                     maxlength="5"
@@ -214,8 +235,13 @@
                     placeholder="336"
                   />
                 </div>
-
-                <button id="order-now" type="submit" disabled="true">ORDER NOW</button>
+                <button id="order-now" type="submit" disabled="true">
+                {{#if _id}}
+                  UPDATE
+                {{else}} 
+                  ORDER NOW
+                {{/if}}
+                </button>
               </div>
             </div>
           </div>
@@ -229,8 +255,8 @@
     </div>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="../js/private.js"></script>
-    <script src="../js/new-order.js"></script>
+    <script src="/js/private.js"></script>
+    <script src="/js/new-order.js"></script>
 
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"

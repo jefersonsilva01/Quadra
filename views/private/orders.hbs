@@ -57,9 +57,50 @@
     <div id="order-container">
       <a id="new-order" href="/private/new-order">+ NEW OERDER</a>
 
-      <h1 id="black-orders">NO ORDERS <br /> TO VIEW</h1>
+      {{#if orders}}
+        {{#each orders}}
+          <div class="ordered-container" id="{{id}}">
+            <div class="order-details">
+              <div class="car-details">
+                <img class="car-bg" src="{{imgPath}}" alt="{{color}}" />
+                <ul>
+                  <li><strong>TURBO-R V-TECH</strong></li>
+                  <li><strong>$123.490</strong></li>
+                  <li><strong>COLOR: </strong>{{color}}</li>
+                </ul>
+              </div>
+              <div class="address-details">
+                <p>
+                  <strong>CITY: </strong>
+                  {{city}}
+                  <br />
+                  <strong>STATE: </strong>
+                  {{state}}
+                </p>
+
+                <p>
+                  <strong>STREET: </strong>
+                  {{street}}
+                  <br />
+                  <strong>N°: </strong>
+                  {{number}}
+                </p>
+
+              </div>
+            </div>
+            <div class="btns-order">
+              <a id="update" href="/private/update-order/{{id}}">UPDATE</a>
+              <a class="delete" id="{{id}}">DELETE</a>
+            </div>
+          </div>
+        {{/each}}
+      {{else}}
+        <h1 id="black-orders">NO ORDERS <br /> TO VIEW</h1>
+      {{/if}}
     </div>
     <script src="../js/private.js">
+    </script>
+    <script src="../js/orders.js">
     </script>
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"

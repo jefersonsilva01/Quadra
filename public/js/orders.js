@@ -1,9 +1,6 @@
-const formProfile = document.getElementById("form-profile"),
-  id = formProfile.action.split('/')[5],
-  btnUpdate = document.querySelector("#update"),
-  btnDelete = document.querySelector("#delete"),
-  modal = document.createElement('div'),
-  inputs = [...document.getElementsByTagName('input')];
+const orderContainer = document.getElementById("order-container");
+btnsDelete = [...document.getElementsByClassName("delete")],
+  modal = document.createElement('div');
 
 let button;
 
@@ -36,12 +33,12 @@ const createModal = (button, text) => {
     </div>
     `;
 
-  formProfile.appendChild(modal);
+  orderContainer.appendChild(modal);
 
 
   const content = document.getElementById("modal-content");
   const message = document.getElementById("content-message");
-  message.innerText = `Are you sure ${text} your profile?`;
+  message.innerText = `Are you sure ${text} your order?`;
 
   modal.style.visibility = 'visible'
   content.style.height = 'auto';
@@ -50,32 +47,12 @@ const createModal = (button, text) => {
   const btnCancel = document.querySelector("#cancel");
   const btnClose = document.querySelector("#btn-close");
 
-  btnClose.onclick = () => formProfile.removeChild(modal);
-  btnCancel.onclick = () => formProfile.removeChild(modal);
+  btnClose.onclick = () => orderContainer.removeChild(modal);
+  btnCancel.onclick = () => orderContainer.removeChild(modal);
 }
 
-btnUpdate.onclick = () => {
-  button = `<button id="confirm" type="submit">CONFIRM</button>`;
-
-  createModal(button, 'update')
-}
-
-btnDelete.onclick = () => {
-  button = `<a id="confirm" href="/private/profile/${id}/delete">CONFIRM</a>`;
+btnsDelete.forEach(btn => btn.onclick = () => {
+  button = `<a id="confirm" href="/private/orders/${btn.id}/delete">CONFIRM</a>`;
 
   createModal(button, 'delete')
-}
-
-inputs.forEach(input => {
-  const currentValue = input.value;
-
-  input.addEventListener('input', () => {
-    if (currentValue !== input.value) {
-      btnUpdate.removeAttribute("disabled")
-    } else {
-      btnUpdate.setAttribute("disabled", "true")
-    }
-  });
 });
-
-

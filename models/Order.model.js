@@ -54,6 +54,7 @@ const orderSchema = new Schema(
       unique: false
     },
     imgPath: String,
+    profileId: { type: Schema.Types.ObjectId, ref: "User" },
   },
   {
     timestamps: true
