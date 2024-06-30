@@ -141,8 +141,8 @@ router.post("/signup", isLoggedOut, uploadCloud.single("picture"), (req, res) =>
         }
       });
 
-      // const message = `https://quadra-68d1b71920b6.herokuapp.com/auth/confirm/${token}`
-      const message = `http://localhost:3000/auth/confirm/${token}`;
+      const message = `https://quadra-68d1b71920b6.herokuapp.com/auth/confirm/${token}`
+      // const message = `http://localhost:3000/auth/confirm/${token}`;
 
       transporter.sendMail({
         from: '"Quadra " <quadra@project.com>',
@@ -226,8 +226,8 @@ router.post("/recover", isLoggedOut, (req, res) => {
         }
       });
 
-      // const message = `https://quadra-68d1b71920b6.herokuapp.com/password/${user._id}`
-      const message = `http://localhost:3000/auth/password/${user._id}`;
+      const message = `https://quadra-68d1b71920b6.herokuapp.com/password/${user._id}`
+      // const message = `http://localhost:3000/auth/password/${user._id}`;
 
       transporter.sendMail({
         from: '"Quadra " <quadra@project.com>',
