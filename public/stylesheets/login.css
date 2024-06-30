@@ -6,7 +6,7 @@
 
 #title-container {
   height: 100vh;
-  background-image: url("../images/quadra-15.png");
+  background-image: url("../images/quadra-06.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -110,6 +110,12 @@
   border: 1.5px solid var(--main-white);
   border-radius: 4px;
   padding: 8px 16px 0;
+  transition: border 0.5s ease-in-out;
+  outline: none;
+}
+
+#form-container input:focus {
+  border: 1.5px solid rgb(133, 81, 230);
 }
 
 #form-container div {

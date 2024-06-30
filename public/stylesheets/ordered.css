@@ -1,0 +1,96 @@
+nav {
+  margin: 0 auto;
+  background-color: var(--dark-chalks);
+  transition: background-color 0.2s ease-in-out;
+}
+
+nav .container-fluid {
+  max-width: 1790px;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: end;
+  width: 100%;
+}
+
+.nav-item {
+  margin: 16px 0;
+}
+
+.nav-title {
+  font-family: "Odibee Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.8em;
+  letter-spacing: 5;
+  color: var(--main-white);
+  transition: color 0.2s ease-in-out;
+  padding: 0;
+  text-decoration: none;
+}
+
+.nav-link {
+  font-family: "Anek Odia", sans-serif;
+  font-size: 1.1em;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+  color: var(--main-white);
+  padding: 0;
+  transition: color 0.2s ease-in-out;
+  line-height: 100%;
+}
+
+.nav-link:hover {
+  color: var(--main-white-two-percent);
+}
+
+.nav-scroll {
+  background-color: var(--main-white);
+}
+
+.nav-title-scroll {
+  color: var(--dark-chalks);
+}
+
+.nav-link-scroll {
+  color: var(--dark-chalks);
+}
+
+.nav-link-scroll:hover {
+  color: var(--dark-chalks);
+}
+
+#message-container {
+  height: 100%;
+  width: 100%;
+  max-width: 1790px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#ordered-message {
+  margin-top: 32px;
+  font-family: var(--font-title);
+  font-size: 500%;
+  text-align: center;
+  color: var(--main-white);
+}
+
+#check-order {
+  text-decoration: none;
+  color: var(--main-white);
+  padding: 8px 16px;
+  text-align: center;
+  display: block;
+}
+
+@media (max-width: 500px) {
+  #ordered-message {
+    font-size: 350%;
+  }
+}

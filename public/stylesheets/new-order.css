@@ -62,8 +62,345 @@ nav .container-fluid {
   color: var(--dark-chalks);
 }
 
+#new-order-container {
+  display: flex;
+  max-width: 1790px;
+  margin: 0 auto;
+}
+
+.car-info {
+  height: auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 50%;
+  height: 100vh;
+  position: relative;
+}
+
+.car-info-dark {
+  background-image: url("../images/quadra-27.png");
+}
+
+.car-info-white {
+  background-image: url("../images/quadra-09.png");
+}
+
+#car-color {
+  width: 100%;
+  background-color: rgb(255, 255, 255, 0.2);
+  position: absolute;
+  bottom: 0;
+  padding: 16px 48px;
+}
+
+#car-color h1 {
+  font-family: var(--font-title);
+  font-size: 420%;
+}
+
+#car-color p {
+  font-family: var(--font-body);
+  font-size: 120%;
+  margin-top: 24px;
+}
+
+#car-color label[for="dark-chalks"],
+#car-color label[for="arctic-white"] {
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  padding: 8px;
+  border: 2px solid var(--main-white);
+  cursor: pointer;
+  box-shadow: transparent;
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.color-active {
+  box-shadow: 0px 0px 2px 5px rgb(133, 81, 230);
+}
+
+#car-color label[for="dark-chalks"] {
+  background-color: var(--dark-chalks);
+}
+
+#car-color label[for="arctic-white"] {
+  background-color: var(--arctic-white);
+  margin-left: 24px;
+}
+
+#color span {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+#dark-chalks,
+#arctic-white {
+  display: none;
+}
+
+.message {
+  border-radius: 4px;
+  padding: 8px;
+}
+
+.error {
+  background-color: rgb(216, 64, 64);
+}
+
+.success {
+  background-color: rgb(49, 202, 49);
+}
+
+#form-container {
+  width: 50%;
+  height: 100vh;
+  padding: 0 70px;
+}
+
+#form-container form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--main-white);
+  height: max-content;
+  padding: 25px 0;
+  height: 100%;
+}
+
+#form-container h2 {
+  font-family: var(--font-title);
+  letter-spacing: 2px;
+  padding-top: 40px;
+  font-size: 200%;
+}
+
+#form-container label {
+  font-family: var(--font-body);
+  margin: 24px 0 8px;
+  display: block;
+  width: max-content;
+  font-size: 120%;
+}
+
+#form-container input {
+  font-family: var(--font-body);
+  font-size: 1.2em;
+  color: var(--main-white);
+  background-color: var(--dark-chalks);
+  border: 1.5px solid var(--main-white);
+  border-radius: 4px;
+  padding: 8px 16px 0;
+  transition: border 0.5s ease-in-out;
+  outline: none;
+  height: 56px;
+}
+
+#form-container input:focus {
+  border: 1.5px solid rgb(133, 81, 230);
+}
+
+#form-container button {
+  background-color: transparent;
+  border: solid 1.5px var(--main-white);
+  color: var(--main-white);
+  font-family: var(--font-body);
+  border-radius: 4px;
+  font-size: 1.2em;
+  margin-top: 10%;
+  transition: all 0.2s ease-in-out;
+  width: 150px;
+  height: 56px;
+}
+
+#form-container button[disabled="true"] {
+  background-color: var(--main-white-two-percent);
+  color: var(--dark-chalks);
+  border-color: transparent;
+}
+
+#form-container button[disabled="true"]:hover {
+  background-color: var(--main-white-two-percent);
+  color: var(--dark-chalks);
+  border-color: transparent;
+}
+
+#form-container button:hover {
+  color: var(--dark-chalks);
+  background-color: var(--main-white);
+}
+
+#container-1 {
+  display: block;
+}
+
+#container-2 {
+  display: none;
+}
+
+#container-1 > div,
+#container-2 > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+
+.btns {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 20%;
+  margin: 32px auto 0;
+}
+
+.btns > div {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--main-white-two-percent);
+  display: inline;
+  transition: background-color 0.5s ease-in-out;
+}
+
+.btns > div:hover {
+  background-color: var(--main-white);
+  cursor: pointer;
+}
+
+#input-container {
+  width: 70%;
+}
+
+#country,
+#address-code {
+  width: 100%;
+}
+
+#state,
+#number {
+  width: 92px;
+  text-align: center;
+}
+
+#expirate-date {
+  width: 121px;
+  text-align: center;
+}
+
+#cvc {
+  width: 99px;
+  text-align: center;
+}
+
+input#card-name,
+input#card-number {
+  width: 100%;
+  text-transform: uppercase;
+}
+
+input#city,
+input#street {
+  width: 100%;
+}
+
 @media (min-width: 501px) and (max-width: 1024px) {
+  #new-order-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .car-info {
+    width: 100%;
+    position: relative;
+  }
+
+  #form-container {
+    width: 100%;
+    height: max-content;
+  }
+
+  #form-container form {
+    height: max-content;
+    margin-bottom: 32px;
+  }
+
+  #city,
+  #street {
+    width: 400px;
+  }
+
+  #car-color {
+    height: 250px;
+  }
+
+  #car-color p {
+    font-size: 150%;
+  }
 }
 
 @media (max-width: 500px) {
+  form > div {
+    display: block;
+  }
+
+  #new-order-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .car-info {
+    width: 100%;
+    position: relative;
+  }
+
+  #form-container {
+    height: auto;
+    width: 100%;
+    padding: 0 24px;
+  }
+
+  #state,
+  #number,
+  #expirate-date,
+  #cvc,
+  #city,
+  #street {
+    width: 100%;
+  }
+
+  #form-container button {
+    width: 100%;
+    margin-bottom: 32px;
+  }
+
+  #car-color h1 {
+    font-family: var(--font-title);
+    font-size: 2em;
+  }
+
+  #car-color p {
+    font-family: var(--font-body);
+    font-size: 120%;
+    margin-top: 12px;
+  }
+
+  #car-color label[for="dark-chalks"],
+  #car-color label[for="arctic-white"] {
+    width: 24px;
+    height: 24px;
+  }
+
+  #car-color {
+    height: 150px;
+  }
+
+  #container-1 > div,
+  #container-2 > div {
+    display: block;
+  }
+
+  #input-container {
+    width: 100%;
+  }
 }
