@@ -79,7 +79,7 @@ The project uses [MongoDB](https://www.mongodb.com/), and [Mongo Atlas](https://
 
 ### Nodemailer
 
-For the email service, a service and host are required (Ex: 'Gmail', 'smtp.gmail.com'), in this case the username and password can be obtained through your [Google](https: //www.google.com/intl/pt-BR/account/about/) account, if you use other services such as Outlook, consult the official documentation to find out how to obtain your data.
+For the email service, a service and host are required (Ex: 'Gmail', 'smtp.gmail.com'), in this case the username and password can be obtained through your [Google](https://www.google.com/intl/pt-BR/account/about/) account, if you use other services such as Outlook, consult the official documentation to find out how to obtain your data.
 
 ### Google passport
 
