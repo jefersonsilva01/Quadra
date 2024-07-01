@@ -113,4 +113,4 @@ Acesse a URL: `http://localhost:3000`
 
 ## Licença
 
-Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](https://github.com/jefersonsilva01/Quadra/blob/main/LICENCE) para mais detalhes.
+Esse projeto está sob a licença MIT. Veja o arquivo [LICENÇA](https://github.com/jefersonsilva01/Quadra/blob/main/LICENCE) para mais detalhes.
