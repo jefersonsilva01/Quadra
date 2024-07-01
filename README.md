@@ -111,7 +111,7 @@ npm install
 npm run dev
 ```
 
-Acesse a URL: `http://localhost:3000`
+Access URL: `http://localhost:3000`
 
 ## License
 
