@@ -91,11 +91,18 @@ header::before {
   opacity: 1;
 }
 
+header #title {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 200px;
+  position: absolute;
+}
+
 header h1,
 header h3,
 header a {
   color: var(--main-white);
-  position: absolute;
   font-family: "Odibee Sans", sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -104,18 +111,15 @@ header a {
 
 header h1 {
   font-size: 15em;
-  width: fit-content;
-  top: 120;
 }
 
 header h3 {
   font-size: 3em;
-  top: 380;
 }
 
 header a {
+  margin-top: 24px;
   font-size: 1.5em;
-  top: 460;
   text-decoration: none;
   border: 2px solid var(--main-white);
   padding: 8px 16px;
@@ -124,6 +128,7 @@ header a {
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
   transition: all 0.5s ease-in-out;
+  width: max-content;
 }
 
 header a:hover {
