@@ -24,7 +24,7 @@
 
 Este projeto é uma página web inspirada no design do site da Tesla, porém dedicada ao icônico carro Quadra Turbo-R V-Tech do jogo Cyberpunk 2077. O objetivo é proporcionar uma experiência visual e informativa aos fãs do jogo, destacando as características e a estética futurista do veículo.
 
-Você pode ver uma demonstração [aqui](https://quadra-68d1b71920b6.herokuapp.com/);
+Você pode ver uma demonstração [aqui](https://quadra-68d1b71920b6.herokuapp.com/).
 
 ## Funcionalidades
 
@@ -44,11 +44,11 @@ Você pode ver uma demonstração [aqui](https://quadra-68d1b71920b6.herokuapp.c
 
 - CRUD de ordens de pedidos, novo pedido, atualizar pedido, listar pedidos e deletar pedido.
 
-- CRUD para perfil de usuário, criar novo perfil de usuário, ver perfil de usuário e deletar perfil de usuário
+- CRUD para perfil de usuário, criar novo perfil de usuário, ver perfil de usuário e deletar perfil de usuário.
 
 ## Layout
 
-O projeto foi desenvolvido a partir do layuot criado no Figma e pode ser acessado através [aqui](https://www.figma.com/design/qQQ72CCzmAzdAfCMIjM8gZ/QUADRA?node-id=2009-2&t=CpjsCNhvsjwsOSCI-1)
+O projeto foi desenvolvido a partir do layuot criado no Figma e pode ser acessado através [aqui](https://www.figma.com/design/qQQ72CCzmAzdAfCMIjM8gZ/QUADRA?node-id=2009-2&t=CpjsCNhvsjwsOSCI-1).
 
 ## Técnologias
 
@@ -69,7 +69,7 @@ O projeto foi desenvolvido a partir do layuot criado no Figma e pode ser acessad
 
 ### Atenção!!! ⚠️
 
-dependendo de quando estiver vendo este projeto o modo de acesso para conseguir as váriaveis de ambiente podem ter mudado em cada serviço.
+Dependendo de quando estiver vendo este projeto o modo de acesso para conseguir as váriaveis de ambiente podem ter mudado em cada serviço.
 
 ### Mongo Atlas
 
