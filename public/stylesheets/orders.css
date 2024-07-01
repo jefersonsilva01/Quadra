@@ -236,18 +236,23 @@ nav .container-fluid {
   margin: auto 0;
   background-color: rgb(24, 24, 26, 0.8);
   visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 24px;
 }
 
 #modal-content,
 #modal-content {
   background-color: var(--main-white);
   max-width: 800px;
+  width: 800px;
   height: 0%;
-  margin: 25% auto;
+  margin: auto;
   border-radius: 4px;
   opacity: 0;
-  position: relative;
   transition: all 0.5s ease-in-out;
+  padding: 0 8px;
 }
 
 #modal-content p,
