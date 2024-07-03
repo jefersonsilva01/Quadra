@@ -1,9 +1,8 @@
 {
-  "version": 2,
-  "builds": [
-    { "src": "app.js", "use": "@vercel/node" }
-  ],
-  "routes": [
-    { "src": "/(.*)", "dest": "app.js" }
-  ]
+  "engines": {
+    "node": "18.17.0"
+  },
+  "scripts": {
+    "start": "node server.js"
+  }
 }
