@@ -26,7 +26,7 @@ You can see a version of this readme in Portuguese [here](https://github.com/jef
 
 This project is a web page inspired by the design of the Tesla website, but dedicated to the iconic Quadra Turbo-R V-Tech car from the game Cyberpunk 2077. The objective is to provide a visual and informative experience for fans of the game, highlighting the features and futuristic aesthetics of the vehicle.
 
-You can see a demo [here](https://quadra-68d1b71920b6.herokuapp.com/).
+You can see a demo [here](https://quadra-steel.vercel.app/).
 
 ## Features
 
@@ -65,7 +65,10 @@ Project was developed based on the layout created in Figma and can be accessed t
 - [x] MongoDB
 - [x] Git
 - [x] Github
-- [x] Heroku
+- [x] Vercel
+- [x] Google Services
+- [x] Meta Services
+- [x] Cloudinary
 
 ## .ENV File
 
