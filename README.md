@@ -118,4 +118,4 @@ Access URL: `http://localhost:3000`
 
 ## License
 
-This project is under the MIT license. See the file [LICENSE](https://github.com/jefersonsilva01/Quadra/blob/main/LICENCE) for more details.
+This project is under the MIT license. See the file [LICENSE](https://github.com/jefersonsilva01/Quadra/blob/main/LICENSE) for more details.
